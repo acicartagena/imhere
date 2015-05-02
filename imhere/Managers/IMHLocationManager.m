@@ -8,6 +8,17 @@
 
 #import "IMHLocationManager.h"
 
+static IMHLocationManager *_instance = nil;
+
 @implementation IMHLocationManager
+
++ (IMHLocationManager *)sharedManager
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[IMHLocationManager alloc] init];
+    });
+    return _instance;
+}
 
 @end

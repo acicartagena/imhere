@@ -16,6 +16,13 @@
 		60816CA11AF4761C00E709C9 /* imhereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CA01AF4761C00E709C9 /* imhereTests.m */; };
 		60816CAD1AF47B4A00E709C9 /* IMHLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CAC1AF47B4A00E709C9 /* IMHLocationManager.m */; };
 		60816CB21AF4849D00E709C9 /* IMHSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CB11AF4849D00E709C9 /* IMHSendViewController.m */; };
+		60816CB51AF498E600E709C9 /* IMHHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CB41AF498E600E709C9 /* IMHHomeViewController.m */; };
+		60816CBB1AF4992A00E709C9 /* IMHLocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CBA1AF4992A00E709C9 /* IMHLocationPickerViewController.m */; };
+		60816CBE1AF499A100E709C9 /* IMHMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CBD1AF499A100E709C9 /* IMHMessageViewController.m */; };
+		60816CC21AF49BB700E709C9 /* IMHConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CC11AF49BB700E709C9 /* IMHConnectionManager.m */; };
+		60816CC51AF49E0900E709C9 /* IMHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CC41AF49E0900E709C9 /* IMHSettingsViewController.m */; };
+		60816CC91AF4B15800E709C9 /* IMHDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CC81AF4B15800E709C9 /* IMHDatabaseManager.m */; };
+		CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46E42CD8D4875211B2117105 /* Pods-imhere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.release.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.release.xcconfig"; sourceTree = "<group>"; };
 		60816C811AF4761B00E709C9 /* imhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60816C851AF4761B00E709C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60816C861AF4761B00E709C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,6 +54,21 @@
 		60816CAC1AF47B4A00E709C9 /* IMHLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHLocationManager.m; path = Managers/IMHLocationManager.m; sourceTree = "<group>"; };
 		60816CB01AF4849D00E709C9 /* IMHSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHSendViewController.h; path = ViewControllers/IMHSendViewController.h; sourceTree = "<group>"; };
 		60816CB11AF4849D00E709C9 /* IMHSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHSendViewController.m; path = ViewControllers/IMHSendViewController.m; sourceTree = "<group>"; };
+		60816CB31AF498E600E709C9 /* IMHHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHHomeViewController.h; path = ViewControllers/IMHHomeViewController.h; sourceTree = "<group>"; };
+		60816CB41AF498E600E709C9 /* IMHHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHHomeViewController.m; path = ViewControllers/IMHHomeViewController.m; sourceTree = "<group>"; };
+		60816CB91AF4992A00E709C9 /* IMHLocationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHLocationPickerViewController.h; path = ViewControllers/IMHLocationPickerViewController.h; sourceTree = "<group>"; };
+		60816CBA1AF4992A00E709C9 /* IMHLocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHLocationPickerViewController.m; path = ViewControllers/IMHLocationPickerViewController.m; sourceTree = "<group>"; };
+		60816CBC1AF499A100E709C9 /* IMHMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHMessageViewController.h; path = ViewControllers/IMHMessageViewController.h; sourceTree = "<group>"; };
+		60816CBD1AF499A100E709C9 /* IMHMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHMessageViewController.m; path = ViewControllers/IMHMessageViewController.m; sourceTree = "<group>"; };
+		60816CC01AF49BB700E709C9 /* IMHConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHConnectionManager.h; path = Managers/IMHConnectionManager.h; sourceTree = "<group>"; };
+		60816CC11AF49BB700E709C9 /* IMHConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHConnectionManager.m; path = Managers/IMHConnectionManager.m; sourceTree = "<group>"; };
+		60816CC31AF49E0900E709C9 /* IMHSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHSettingsViewController.h; path = ViewControllers/IMHSettingsViewController.h; sourceTree = "<group>"; };
+		60816CC41AF49E0900E709C9 /* IMHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHSettingsViewController.m; path = ViewControllers/IMHSettingsViewController.m; sourceTree = "<group>"; };
+		60816CC61AF4A2C100E709C9 /* IMHConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMHConstants.h; sourceTree = "<group>"; };
+		60816CC71AF4B15800E709C9 /* IMHDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHDatabaseManager.h; path = Managers/IMHDatabaseManager.h; sourceTree = "<group>"; };
+		60816CC81AF4B15800E709C9 /* IMHDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHDatabaseManager.m; path = Managers/IMHDatabaseManager.m; sourceTree = "<group>"; };
+		B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.debug.xcconfig"; sourceTree = "<group>"; };
+		BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imhere.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		455F6E84536306A48E039616 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		60816C781AF4761B00E709C9 = {
 			isa = PBXGroup;
 			children = (
 				60816C831AF4761B00E709C9 /* imhere */,
 				60816C9D1AF4761C00E709C9 /* imhereTests */,
 				60816C821AF4761B00E709C9 /* Products */,
+				8EF102EC692A6E422D1D1301 /* Pods */,
+				455F6E84536306A48E039616 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,13 +121,15 @@
 		60816C831AF4761B00E709C9 /* imhere */ = {
 			isa = PBXGroup;
 			children = (
-				60816CAF1AF483A600E709C9 /* New Group */,
+				60816CBF1AF499B200E709C9 /* Views */,
+				60816CAF1AF483A600E709C9 /* Models */,
 				60816CAE1AF47C5900E709C9 /* ViewControllers */,
 				60816CAA1AF4798700E709C9 /* Managers */,
 				60816C881AF4761B00E709C9 /* AppDelegate.h */,
 				60816C891AF4761B00E709C9 /* AppDelegate.m */,
 				60816C8B1AF4761B00E709C9 /* ViewController.h */,
 				60816C8C1AF4761B00E709C9 /* ViewController.m */,
+				60816CC61AF4A2C100E709C9 /* IMHConstants.h */,
 				60816C8E1AF4761B00E709C9 /* Main.storyboard */,
 				60816C911AF4761B00E709C9 /* Images.xcassets */,
 				60816C931AF4761B00E709C9 /* LaunchScreen.xib */,
@@ -133,6 +169,10 @@
 			children = (
 				60816CAB1AF47B4A00E709C9 /* IMHLocationManager.h */,
 				60816CAC1AF47B4A00E709C9 /* IMHLocationManager.m */,
+				60816CC01AF49BB700E709C9 /* IMHConnectionManager.h */,
+				60816CC11AF49BB700E709C9 /* IMHConnectionManager.m */,
+				60816CC71AF4B15800E709C9 /* IMHDatabaseManager.h */,
+				60816CC81AF4B15800E709C9 /* IMHDatabaseManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -140,17 +180,41 @@
 		60816CAE1AF47C5900E709C9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				60816CB31AF498E600E709C9 /* IMHHomeViewController.h */,
+				60816CB41AF498E600E709C9 /* IMHHomeViewController.m */,
 				60816CB01AF4849D00E709C9 /* IMHSendViewController.h */,
 				60816CB11AF4849D00E709C9 /* IMHSendViewController.m */,
+				60816CB91AF4992A00E709C9 /* IMHLocationPickerViewController.h */,
+				60816CBA1AF4992A00E709C9 /* IMHLocationPickerViewController.m */,
+				60816CBC1AF499A100E709C9 /* IMHMessageViewController.h */,
+				60816CBD1AF499A100E709C9 /* IMHMessageViewController.m */,
+				60816CC31AF49E0900E709C9 /* IMHSettingsViewController.h */,
+				60816CC41AF49E0900E709C9 /* IMHSettingsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		60816CAF1AF483A600E709C9 /* New Group */ = {
+		60816CAF1AF483A600E709C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "New Group";
+			name = Models;
+			sourceTree = "<group>";
+		};
+		60816CBF1AF499B200E709C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8EF102EC692A6E422D1D1301 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */,
+				46E42CD8D4875211B2117105 /* Pods-imhere.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60816CA41AF4761C00E709C9 /* Build configuration list for PBXNativeTarget "imhere" */;
 			buildPhases = (
+				315F8BA9C273AA548F3BCA3F /* Check Pods Manifest.lock */,
 				60816C7D1AF4761B00E709C9 /* Sources */,
 				60816C7E1AF4761B00E709C9 /* Frameworks */,
 				60816C7F1AF4761B00E709C9 /* Resources */,
+				07D638866053B9A70D7CDAF9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,16 +319,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07D638866053B9A70D7CDAF9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-imhere/Pods-imhere-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		315F8BA9C273AA548F3BCA3F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		60816C7D1AF4761B00E709C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60816CBB1AF4992A00E709C9 /* IMHLocationPickerViewController.m in Sources */,
 				60816CB21AF4849D00E709C9 /* IMHSendViewController.m in Sources */,
 				60816C8D1AF4761B00E709C9 /* ViewController.m in Sources */,
 				60816CAD1AF47B4A00E709C9 /* IMHLocationManager.m in Sources */,
 				60816C8A1AF4761B00E709C9 /* AppDelegate.m in Sources */,
+				60816CB51AF498E600E709C9 /* IMHHomeViewController.m in Sources */,
+				60816CC21AF49BB700E709C9 /* IMHConnectionManager.m in Sources */,
 				60816C871AF4761B00E709C9 /* main.m in Sources */,
+				60816CC51AF49E0900E709C9 /* IMHSettingsViewController.m in Sources */,
+				60816CBE1AF499A100E709C9 /* IMHMessageViewController.m in Sources */,
+				60816CC91AF4B15800E709C9 /* IMHDatabaseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +487,7 @@
 		};
 		60816CA51AF4761C00E709C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = imhere/Info.plist;
@@ -393,6 +499,7 @@
 		};
 		60816CA61AF4761C00E709C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46E42CD8D4875211B2117105 /* Pods-imhere.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = imhere/Info.plist;
@@ -455,6 +562,7 @@
 				60816CA61AF4761C00E709C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60816CA71AF4761C00E709C9 /* Build configuration list for PBXNativeTarget "imhereTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +571,7 @@
 				60816CA91AF4761C00E709C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

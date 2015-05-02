@@ -10,4 +10,6 @@
 
 @interface IMHLocationManager : NSObject
 
++ (IMHLocationManager *)sharedManager;
+
 @end

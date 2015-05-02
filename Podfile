@@ -5,7 +5,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'imhere' do
 
-
+pod 'AFNetworkActivityLogger'
+pod 'AFNetworking'
+pod 'JSONModel'
+pod 'SVProgressHUD'
+pod 'TPKeyboardAvoiding'
 
 end
 
