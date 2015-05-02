@@ -61,7 +61,7 @@ static IMHLocationManager *_instance = nil;
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         _locationManager.delegate = self;
-        _locationManager.distanceFilter = 10;
+        _locationManager.distanceFilter = kCLDistanceFilterNone;
         
         [_locationManager startUpdatingLocation];
     }

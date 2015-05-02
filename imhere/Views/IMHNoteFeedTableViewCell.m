@@ -115,6 +115,9 @@
     if (!_messageText){
         _messageText = [UITextView newAutoLayoutView];
         [self.contentView addSubview:_messageText];
+        _messageText.editable = NO;
+        _messageText.scrollEnabled = NO;
+        _messageText.userInteractionEnabled = NO;
     }
     return _messageText;
 }
