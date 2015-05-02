@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "08E4271C243FDAB85FA654DD"
-               BuildableName = "libPods-imhere-SVProgressHUD.a"
-               BlueprintName = "Pods-imhere-SVProgressHUD"
+               BlueprintIdentifier = "43697DB865ED9E61A90E0A63"
+               BuildableName = "libPods-imhere-PNTToolbar.a"
+               BlueprintName = "Pods-imhere-PNTToolbar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F748560D331321541330F31A"
+               BlueprintIdentifier = "CEF6C115B85789CD858370AC"
                BuildableName = "libPods-imhere.a"
                BlueprintName = "Pods-imhere"
                ReferencedContainer = "container:Pods.xcodeproj">

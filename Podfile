@@ -11,6 +11,7 @@ pod 'JSONModel'
 pod 'SVProgressHUD'
 pod 'TPKeyboardAvoiding'
 pod 'YapDatabase'
+pod 'PNTToolbar'
 
 end
 
