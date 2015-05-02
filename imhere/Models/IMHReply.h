@@ -14,7 +14,8 @@
 @property (strong, nonatomic) NSString *parent_id;
 @property (strong, nonatomic) NSString *from;
 @property (strong, nonatomic) NSString *message;
-@property (strong, nonatomic) NSDate *timestamp;
+@property (strong, nonatomic) NSDate *send_timestamp;
+@property (strong, nonatomic) NSDate *rcv_timestamp;
 
 - (NSString *)timestampString;
 

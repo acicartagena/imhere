@@ -111,7 +111,7 @@
     self.note.message = self.messageTextView.text;
     self.note.latitude =  self.selectedLocation == nil ? @"-33.8678500" : self.selectedLocation.latitude;
     self.note.longitude = self.selectedLocation == nil ?  @"151.2073200" : self.selectedLocation.longitude;
-    self.note.timestamp = [NSDate date];
+    self.note.send_timestamp = [NSDate date];
     self.note.radius = 5;
     self.note.loc_name = self.selectedLocation == nil ? @"Sydney": self.selectedLocation.locationName;
     

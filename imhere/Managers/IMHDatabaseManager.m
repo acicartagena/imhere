@@ -9,10 +9,17 @@
 #import "IMHDatabaseManager.h"
 #import "IMHConstants.h"
 
+#import "IMHNote.h"
+#import "IMHReply.h"
+
+//#import <YapDatabase/YapDatabase.h>
+
 #import "YapDatabase.h"
-//#import "YapDatabaseView.h"
-//#import "YapDatabaseFullTextSearch.h"
-//#import "YapDatabaseSearchResultsView.h"
+#import "YapDatabaseView.h"
+#import "YapDatabaseFullTextSearch.h"
+#import "YapDatabaseSearchResultsView.h"
+
+#define kVersionTag @"1" //increment every time there are changes to groups&sorts
 
 static IMHDatabaseManager *_instance = nil;
 
@@ -20,8 +27,8 @@ static IMHDatabaseManager *_instance = nil;
 
 @property (strong, nonatomic) YapDatabase *database;
 
-@property (strong, nonatomic) YapDatabaseConnection *readWriteConnection;
-@property (strong, nonatomic) YapDatabaseConnection *mainReadConnection;
+@property (strong, nonatomic) YapDatabaseConnection *backgroundConnection;
+@property (strong, nonatomic) YapDatabaseConnection *mainConnection;
 
 @end
 
@@ -56,22 +63,113 @@ static IMHDatabaseManager *_instance = nil;
 }
 
 #pragma mark - properties
-- (YapDatabaseConnection *)readWriteConnection
+- (YapDatabaseConnection *)backgroundConnection
 {
-    if (!_readWriteConnection){
-        _readWriteConnection = [self.database newConnection];
+    if (!_backgroundConnection){
+        _backgroundConnection = [self.database newConnection];
     }
-    return _readWriteConnection;
+    return _backgroundConnection;
 }
 
-- (YapDatabaseConnection *)mainReadConnection
+- (YapDatabaseConnection *)mainConnection
 {
-    if (!_mainReadConnection){
-        _mainReadConnection = [self.database newConnection];
+    if (!_mainConnection){
+        _mainConnection = [self.database newConnection];
     }
-    return _mainReadConnection;
+    return _mainConnection;
+}
+
+#pragma mark - private methods
+- (void)setupAllNotes
+{
+    YapDatabaseViewGrouping *grouping = [YapDatabaseViewGrouping withObjectBlock:^NSString *(NSString *collection, NSString *key, id object) {
+        return @"all";
+    }];
+    YapDatabaseViewSorting *sorting = [YapDatabaseViewSorting withObjectBlock:^NSComparisonResult(NSString *group, NSString *collection1, NSString *key1, id object1, NSString *collection2, NSString *key2, id object2) {
+        
+        __unsafe_unretained IMHNote *note1 = (IMHNote *)object1;
+        __unsafe_unretained IMHNote *note2 = (IMHNote *)object2;
+        
+        return [note1.id compare:note2.id options:NSNumericSearch];
+    }];
+    
+    
+    YapDatabaseView *databaseView = [[YapDatabaseView alloc] initWithGrouping:grouping sorting:sorting versionTag:kVersionTag];
+    [self.database registerExtension:databaseView withName:@"allNotes"];
+}
+
+- (void)setupUnreadNotes
+{
+    YapDatabaseViewGrouping *grouping = [YapDatabaseViewGrouping withObjectBlock:^NSString *(NSString *collection, NSString *key, id object) {
+        if ([object isKindOfClass:[IMHNote class]]){
+            IMHNote *note = (IMHNote *)object;
+            if (!note.rcv_timestamp){
+                return @"notes";
+            }
+        }
+        return nil;
+    }];
+    YapDatabaseViewSorting *sorting = [YapDatabaseViewSorting withObjectBlock:^NSComparisonResult(NSString *group, NSString *collection1, NSString *key1, id object1, NSString *collection2, NSString *key2, id object2) {
+        
+        __unsafe_unretained IMHNote *note1 = (IMHNote *)object1;
+        __unsafe_unretained IMHNote *note2 = (IMHNote *)object2;
+        
+        return [note1.id compare:note2.id options:NSNumericSearch];
+    }];
+    
+    YapDatabaseView *databaseView = [[YapDatabaseView alloc] initWithGrouping:grouping sorting:sorting versionTag:kVersionTag];
+    [self.database registerExtension:databaseView withName:@"unreadNotes"];
 }
 
 #pragma mark - public methods
+- (void)saveNotes:(NSArray *)notes completionBlock:(void (^)(void))completionBlock
+{
+    [self.backgroundConnection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
+        for (IMHNote *note in notes){
+            [transaction setObject:note forKey:note.id inCollection:@"notes"];
+        }
+    } completionBlock:^{
+        if (completionBlock){
+            completionBlock();
+        }
+    }];
+}
+
+- (void)saveNote:(IMHNote *)note completionBlock:(void (^)(void))completionBlock
+{
+    [self.backgroundConnection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
+        [transaction setObject:note forKey:note.id inCollection:@"notes"];
+    } completionBlock:^{
+        if (completionBlock){
+            completionBlock();
+        }
+    }];
+}
+
+- (void)saveReplies:(NSArray *)replies completionBlock:(void (^)(void))completionBlock
+{
+    [self.backgroundConnection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
+        for (IMHReply *reply in replies){
+            [transaction setObject:replies forKey:reply.id inCollection:@"replies"];
+        }
+    } completionBlock:^{
+        if (completionBlock){
+            completionBlock();
+        }
+    }];
+}
+
+- (void)saveReply:(IMHReply *)reply completionBlock:(void (^)(void))completionBlock
+{
+    [self.backgroundConnection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
+        [transaction setObject:reply forKey:reply.id inCollection:@"replies"];
+    } completionBlock:^{
+        if (completionBlock){
+            completionBlock();
+        }
+    }];
+}
+
+
 
 @end
