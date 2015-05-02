@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC7AF5D9702D88B1378C43F9"
+               BlueprintIdentifier = "051DB181AA279589BC3C1D72"
                BuildableName = "libPods-imhere-PNTToolbar.a"
                BlueprintName = "Pods-imhere-PNTToolbar"
                ReferencedContainer = "container:Pods.xcodeproj">

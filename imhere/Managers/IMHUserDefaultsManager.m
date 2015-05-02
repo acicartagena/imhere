@@ -75,8 +75,16 @@ static IMHUserDefaultsManager *_instance = nil;
     if (!_notes){
         if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"notes"] isKindOfClass:[NSData class]]){
             NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"notes"];
-            _notes = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+            _notes = [[NSKeyedUnarchiver unarchiveObjectWithData:data] mutableCopy];
         }
+    }
+    
+    if (_notes == nil){
+        _notes = [[NSMutableDictionary alloc] init];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:_notes];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"notes"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     return _notes;
 }
@@ -98,6 +106,14 @@ static IMHUserDefaultsManager *_instance = nil;
             NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"notesArray"];
             _notesArray = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         }
+    }
+    
+    if (_notesArray == nil){
+        _notesArray = [[NSMutableArray alloc] init];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:_notesArray];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"notesArray"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     return _notesArray;
 }

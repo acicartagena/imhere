@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CF8448B305509A01D3B6BDB3"
+               BlueprintIdentifier = "6BBD66183D05B724A7D66486"
                BuildableName = "libPods-imhere-TPKeyboardAvoiding.a"
                BlueprintName = "Pods-imhere-TPKeyboardAvoiding"
                ReferencedContainer = "container:Pods.xcodeproj">
