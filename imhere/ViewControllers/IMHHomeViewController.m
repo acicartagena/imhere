@@ -43,7 +43,7 @@
 
 - (void)getData
 {
-    [[IMHConnectionManager sharedManager] fetchAll:@"61424448667" completion:^(NSError *error) {
+    [[IMHConnectionManager sharedManager] fetchAll:[[IMHUserDefaultsManager sharedManager] userId] completion:^(NSError *error) {
         
         self.notes = [[IMHUserDefaultsManager sharedManager].notes allValues];
         [self.tableView reloadData];

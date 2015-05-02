@@ -13,6 +13,7 @@
 #import "IMHKeyboardToolbar.h"
 #import "IMHTextView.h"
 
+#import "IMHUserDefaultsManager.h"
 #import "IMHConnectionManager.h"
 
 #import "IMHLocation.h"
@@ -105,8 +106,8 @@
     }
     
 #warning to textfield processing
-    self.note.to = @[@"61424448667"];//@[self.toTextField.text];
-    self.note.from = @"61424448667";
+    self.note.to = @[self.toTextField.text];
+    self.note.from = [[IMHUserDefaultsManager sharedManager] userId];
     
     self.note.message = self.messageTextView.text;
     self.note.latitude =  self.selectedLocation == nil ? @"-33.8678500" : self.selectedLocation.latitude;
@@ -118,6 +119,9 @@
     [[IMHConnectionManager sharedManager] sendMessage:self.note completion:^(NSError *error) {
         NSLog(@"message sent?");
     }];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 #pragma mark - location picker delegate

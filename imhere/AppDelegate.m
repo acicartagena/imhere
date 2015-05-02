@@ -12,8 +12,8 @@
 #import "IMHPubNubManager.h"
 
 #import "IMHUserDefaultsManager.h"
-
 #import "IMHLocationManager.h"
+#import "IMHHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -44,7 +44,7 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    [PubNub setDelegate:self];
+    [[IMHUserDefaultsManager sharedManager] setUserId:@"61450061292"];
     
     return YES;
 }
@@ -57,7 +57,10 @@
     
     // I have remote notifs now, subscribe to this channel
 #warning todo actual channel
-    [[IMHPubNubManager sharedManager] joinChannel:@"61424448667" completion:nil];
+    __weak typeof(self) weakSelf = self;
+    [[IMHPubNubManager sharedManager] joinChannel:[[IMHUserDefaultsManager sharedManager] userId] completion:^(NSError *error){
+        [PubNub setDelegate:weakSelf];
+    }];
 }
 
 
@@ -78,13 +81,18 @@
     }
     
     // TODO Delete alert code and actually do something -- refresh?
-    if (alert) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message
+    /*if (alert) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"New message"
                                                             message:message  delegate:self
-                                                  cancelButtonTitle:@"Thanks PubNub!"
-                                                  otherButtonTitles:@"Send Me More!", nil];
+                                                  cancelButtonTitle:@"View" otherButtonTitles:nil];
         [alertView show];
+    }*/
+    
+    UIViewController *topCtrlr = ((UINavigationController*)self.window.rootViewController).visibleViewController;
+    if ([topCtrlr respondsToSelector:@selector(getData)]) {
+        [(IMHHomeViewController *)topCtrlr getData];
     }
+    
 }
 
 // #6 Add PubNub delegate to catch when channel in enabled with APNs
@@ -144,5 +152,10 @@
     [[IMHUserDefaultsManager sharedManager] saveData];
 }
 
+
+- (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message
+{
+    NSLog(@"pubnub receive message: %@",message);
+}
 
 @end

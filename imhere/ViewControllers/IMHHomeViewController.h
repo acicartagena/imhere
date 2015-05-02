@@ -13,4 +13,7 @@ static NSString *const homeToMessageSegueId = @"homeToMessage";
 
 @interface IMHHomeViewController : UIViewController
 
+
+- (void) getData;
+
 @end

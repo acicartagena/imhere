@@ -7,7 +7,7 @@
 //
 
 #import "IMHPubNubManager.h"
-
+#import "AppDelegate.h"
 #import <PubNub/PubNub.h>
 
 static IMHPubNubManager *_instance = nil;
@@ -37,33 +37,68 @@ static IMHPubNubManager *_instance = nil;
         [PubNub setConfiguration:configuration];
         [PubNub connect];
         
-        [PubNub setDelegate:self];
+        //[PubNub setDelegate:self];
     }
     return self;
 }
 
 - (void) joinChannel:(NSString *) channelName completion:(void (^)(NSError *error))completionBlock
 {
-    PNChannel *channel = [PNChannel channelWithName:channelName];
+    PNChannel *channel = [PNChannel channelWithName:channelName shouldObservePresence:YES];
     
-    [PubNub subscribeOn:@[channel]
-withCompletionHandlingBlock:^(PNSubscriptionProcessState state, NSArray *channels, PNError *error) {
-        switch (state) {
-            case PNSubscriptionProcessNotSubscribedState:
-                NSLog(@"not subscribed");
-                // There should be a reason because of which subscription failed and it can be found in 'error' instance
-                if (completionBlock)
-                    completionBlock(error);
-                break;
-            case PNSubscriptionProcessSubscribedState:
-                NSLog(@"subscribed");
-                // PubNub client completed subscription on specified set of channels.
-                if (completionBlock)
-                    completionBlock(nil);
-                break;
-            default:
-                break;
+    [[PNObservationCenter defaultCenter] addClientConnectionStateObserver:self withCallbackBlock:^(NSString *origin, BOOL connected, PNError *connectionError){
+        
+        if (connected)
+        {
+            NSLog(@"OBSERVER: Successful Connection!");
+            
+            // Subscribe on connect
+            [PubNub subscribeOnChannel:channel];
+            
+            // #3 Define AppDelegate
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            
+            // #4 Pass the deviceToken from the Delegate
+            NSData *deviceToken = appDelegate.dToken;
+            
+            // #5 Double check we've passed the token properly
+            NSLog(@"Device token received: %@", deviceToken);
+            
+            // #6 If we have the device token, enable apns for our channel if it isn't already enabled.
+            if (deviceToken) {
+                
+                // APNS enabled already?
+                [PubNub requestPushNotificationEnabledChannelsForDevicePushToken:deviceToken
+                                                     withCompletionHandlingBlock:^(NSArray *channels, PNError *error){
+                                                         if (channels.count == 0 )
+                                                         {
+                                                             NSLog(@"BLOCK: requestPushNotificationEnabledChannelsForDevicePushToken: Channel: %@ , Error %@",channels,error);
+                                                             
+                                                             // Enable APNS on this Channel with deviceToken
+                                                             [PubNub enablePushNotificationsOnChannel:channel
+                                                              
+                                                                                  withDevicePushToken:deviceToken
+                                                                           andCompletionHandlingBlock:^(NSArray *channel, PNError *error){
+                                                                               NSLog(@"BLOCK: enablePushNotificationsOnChannel: %@ , Error %@",channel,error);
+                                                                           }];
+                                                         }
+                                                     }];
+                
+                // ...skip the apns enabled check
+                // Enable APNS on this Channel with deviceToken
+                [PubNub enablePushNotificationsOnChannel:channel
+                 
+                                     withDevicePushToken:deviceToken
+                              andCompletionHandlingBlock:^(NSArray *channel, PNError *error){
+                                  NSLog(@"BLOCK: enablePushNotificationsOnChannel: %@ , Error %@",channel,error);
+                              }];
+            }
         }
+        else if (!connected || connectionError != nil )
+        {
+            NSLog(@"OBSERVER: Error %@, Connection Failed!", connectionError.localizedDescription);
+        }
+        
     }];
 }
 

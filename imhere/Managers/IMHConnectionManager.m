@@ -193,7 +193,7 @@ static IMHConnectionManager *_instance = nil;
 - (NSURLSessionDataTask *)pingLocation:(IMHLocation *)location
 {
     NSString *pathName = @"loc_ping/";
-    NSDictionary *parameters = @{@"uid":@"61424448667",@"lat":location.latitude,@"long":location.longitude};
+    NSDictionary *parameters = @{@"uid":[[IMHUserDefaultsManager sharedManager] userId],@"lat":location.latitude,@"long":location.longitude};
     return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"ping yey");
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
