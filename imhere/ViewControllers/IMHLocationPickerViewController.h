@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 
 @class IMHLocation;
 
@@ -19,5 +20,7 @@
 @interface IMHLocationPickerViewController : UIViewController
 
 @property (nonatomic, weak) id<IMHLocationPickerDelegate> delegate;
+
+@property (nonatomic) IBOutlet MKMapView *mapView;
 
 @end

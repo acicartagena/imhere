@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gnN-GI-otI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gnN-GI-otI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--New Note-->
@@ -410,55 +410,87 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="130" width="368" height="395"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="iI0-gK-uo8" id="jnY-gm-pKa"/>
                                     <outlet property="delegate" destination="iI0-gK-uo8" id="FX2-Qh-ZIi"/>
                                 </connections>
                             </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tno-fa-J3t">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6jB-Lk-Vn8"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6jB-Lk-Vn8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="533" width="373" height="259"/>
+                                    <mask key="constraints">
+                                        <include reference="6jB-Lk-Vn8"/>
+                                    </mask>
+                                </variation>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.22745098039215686" green="0.81176470588235294" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KLP-qE-Nbp" firstAttribute="top" secondItem="Wmh-4a-CQA" secondAttribute="bottom" constant="20" id="9B5-4M-CKd"/>
                             <constraint firstAttribute="trailing" secondItem="Wmh-4a-CQA" secondAttribute="trailing" constant="16" id="Lnn-NQ-vxX"/>
+                            <constraint firstAttribute="trailing" secondItem="Tno-fa-J3t" secondAttribute="trailing" constant="11" id="PF6-AZ-igK"/>
                             <constraint firstItem="zyo-U9-dtF" firstAttribute="top" secondItem="52H-gf-0pU" secondAttribute="bottom" constant="8" id="Wna-L2-yYe"/>
                             <constraint firstItem="Wmh-4a-CQA" firstAttribute="leading" secondItem="tMr-Hf-S60" secondAttribute="leading" constant="16" id="bR7-kI-neq"/>
                             <constraint firstAttribute="trailing" secondItem="zyo-U9-dtF" secondAttribute="trailing" constant="16" id="ct8-rK-igN"/>
                             <constraint firstItem="zyo-U9-dtF" firstAttribute="leading" secondItem="tMr-Hf-S60" secondAttribute="leading" constant="16" id="j1w-0o-Ixm"/>
                             <constraint firstItem="Wmh-4a-CQA" firstAttribute="top" secondItem="zyo-U9-dtF" secondAttribute="bottom" constant="8" id="oM8-KY-aVz"/>
+                            <constraint firstItem="Tno-fa-J3t" firstAttribute="top" secondItem="Wmh-4a-CQA" secondAttribute="bottom" constant="8" id="qeE-3a-XQj"/>
+                            <constraint firstItem="KLP-qE-Nbp" firstAttribute="top" secondItem="Tno-fa-J3t" secondAttribute="bottom" constant="8" id="roc-UZ-iaJ"/>
+                            <constraint firstItem="Tno-fa-J3t" firstAttribute="leading" secondItem="tMr-Hf-S60" secondAttribute="leading" constant="16" id="uBQ-Xs-IqN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="zyo-U9-dtF"/>
                                 <exclude reference="Wmh-4a-CQA"/>
+                                <exclude reference="Tno-fa-J3t"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9B5-4M-CKd"/>
                                 <exclude reference="Wna-L2-yYe"/>
                                 <exclude reference="ct8-rK-igN"/>
                                 <exclude reference="j1w-0o-Ixm"/>
                                 <exclude reference="Lnn-NQ-vxX"/>
                                 <exclude reference="bR7-kI-neq"/>
                                 <exclude reference="oM8-KY-aVz"/>
+                                <exclude reference="PF6-AZ-igK"/>
+                                <exclude reference="qeE-3a-XQj"/>
+                                <exclude reference="uBQ-Xs-IqN"/>
+                                <exclude reference="roc-UZ-iaJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="zyo-U9-dtF"/>
                                 <include reference="Wmh-4a-CQA"/>
+                                <include reference="Tno-fa-J3t"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9B5-4M-CKd"/>
                                 <include reference="Wna-L2-yYe"/>
                                 <include reference="ct8-rK-igN"/>
                                 <include reference="j1w-0o-Ixm"/>
                                 <include reference="Lnn-NQ-vxX"/>
                                 <include reference="bR7-kI-neq"/>
                                 <include reference="oM8-KY-aVz"/>
+                                <include reference="PF6-AZ-igK"/>
+                                <include reference="qeE-3a-XQj"/>
+                                <include reference="uBQ-Xs-IqN"/>
+                                <include reference="roc-UZ-iaJ"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="locationName" destination="zyo-U9-dtF" id="4v2-BL-X3U"/>
+                        <outlet property="mapView" destination="Tno-fa-J3t" id="oSc-5X-UsB"/>
                         <outlet property="tableView" destination="Wmh-4a-CQA" id="8ra-aA-9i2"/>
                     </connections>
                 </viewController>

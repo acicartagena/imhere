@@ -131,6 +131,7 @@ static IMHLocationManager *_instance = nil;
                               loc.longitude = [NSString stringWithFormat:@"%f",coordinate.longitude];
                               loc.locationName = placemark.name;
                               loc.address = ABCreateStringWithAddressDictionary (placemark.addressDictionary,NO);
+                              loc.address = [loc.address stringByReplacingOccurrencesOfString:@"\n" withString:@", "];
                               
                               [locations addObject:loc];
                           }

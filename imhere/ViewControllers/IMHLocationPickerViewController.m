@@ -52,6 +52,7 @@
         [self.delegate performSelector:@selector(locationSelected:) withObject:location];
     }
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
