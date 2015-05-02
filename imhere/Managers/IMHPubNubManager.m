@@ -44,11 +44,13 @@ static IMHPubNubManager *_instance = nil;
 withCompletionHandlingBlock:^(PNSubscriptionProcessState state, NSArray *channels, PNError *error) {
         switch (state) {
             case PNSubscriptionProcessNotSubscribedState:
+                NSLog(@"not subscribed");
                 // There should be a reason because of which subscription failed and it can be found in 'error' instance
                 if (completionBlock)
                     completionBlock(error);
                 break;
             case PNSubscriptionProcessSubscribedState:
+                NSLog(@"subscribed");
                 // PubNub client completed subscription on specified set of channels.
                 if (completionBlock)
                     completionBlock(nil);

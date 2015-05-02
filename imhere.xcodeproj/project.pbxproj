@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00185FB81AF571D800C4F033 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00185FB71AF571D800C4F033 /* MapKit.framework */; };
 		00BC62B91AF5209400FEBF58 /* IMHPubNubManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BC62B81AF5209400FEBF58 /* IMHPubNubManager.m */; };
 		60816C871AF4761B00E709C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816C861AF4761B00E709C9 /* main.m */; };
 		60816C8A1AF4761B00E709C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816C891AF4761B00E709C9 /* AppDelegate.m */; };
@@ -37,7 +38,6 @@
 		60816CEE1AF4F3A300E709C9 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60816CED1AF4F3A300E709C9 /* AddressBookUI.framework */; };
 		60816CF11AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CF01AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m */; };
 		60816CF41AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CF31AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m */; };
-		60816CF71AF509B700E709C9 /* IMHPubNubManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CF61AF509B700E709C9 /* IMHPubNubManager.m */; };
 		60816CFA1AF520FF00E709C9 /* IMHThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CF91AF520FF00E709C9 /* IMHThread.m */; };
 		CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */; };
 /* End PBXBuildFile section */
@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00185FB71AF571D800C4F033 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		00BC62B81AF5209400FEBF58 /* IMHPubNubManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHPubNubManager.m; path = Managers/IMHPubNubManager.m; sourceTree = "<group>"; };
 		46E42CD8D4875211B2117105 /* Pods-imhere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.release.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.release.xcconfig"; sourceTree = "<group>"; };
 		60816C811AF4761B00E709C9 /* imhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +114,6 @@
 		60816CF21AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+DynamicCellHeight.h"; path = "3rdParty/UITableViewCell+DynamicCellHeight.h"; sourceTree = "<group>"; };
 		60816CF31AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+DynamicCellHeight.m"; path = "3rdParty/UITableViewCell+DynamicCellHeight.m"; sourceTree = "<group>"; };
 		60816CF51AF509B700E709C9 /* IMHPubNubManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHPubNubManager.h; path = Managers/IMHPubNubManager.h; sourceTree = "<group>"; };
-		60816CF61AF509B700E709C9 /* IMHPubNubManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHPubNubManager.m; path = Managers/IMHPubNubManager.m; sourceTree = "<group>"; };
 		60816CF81AF520FF00E709C9 /* IMHThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHThread.h; path = Models/IMHThread.h; sourceTree = "<group>"; };
 		60816CF91AF520FF00E709C9 /* IMHThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHThread.m; path = Models/IMHThread.m; sourceTree = "<group>"; };
 		B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 			files = (
 				60816CEE1AF4F3A300E709C9 /* AddressBookUI.framework in Frameworks */,
 				60816CD71AF4C97300E709C9 /* CoreLocation.framework in Frameworks */,
+				00185FB81AF571D800C4F033 /* MapKit.framework in Frameworks */,
 				CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +145,7 @@
 		455F6E84536306A48E039616 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00185FB71AF571D800C4F033 /* MapKit.framework */,
 				60816CED1AF4F3A300E709C9 /* AddressBookUI.framework */,
 				60816CEB1AF4F35000E709C9 /* AddressBook.framework */,
 				60816CD61AF4C97300E709C9 /* CoreLocation.framework */,
@@ -361,6 +363,9 @@
 						DevelopmentTeam = VWW575E2Q5;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};

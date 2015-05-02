@@ -63,11 +63,10 @@ static IMHLocationManager *_instance = nil;
         _locationManager.delegate = self;
         _locationManager.distanceFilter = kCLDistanceFilterNone;
         
-        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
-            [_locationManager requestAlwaysAuthorization];
-        }
-        
         if ([CLLocationManager locationServicesEnabled]){
+            if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+                [self.locationManager requestAlwaysAuthorization];
+            }
             [_locationManager startUpdatingLocation];
         }
         

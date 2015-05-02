@@ -56,8 +56,8 @@
     dToken = deviceToken;
     
     // I have remote notifs now, subscribe to this channel
-#pragma mark todo actual channel
-    [[IMHPubNubManager sharedManager] joinChannel:@"testchannel" completion:nil];
+#warning todo actual channel
+    [[IMHPubNubManager sharedManager] joinChannel:@"61424448667" completion:nil];
 }
 
 
