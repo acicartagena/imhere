@@ -297,6 +297,78 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wmh-4a-CQA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationTableViewCell" rowHeight="70" id="27k-pU-99a" customClass="IMHLocationTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="27k-pU-99a" id="RKk-h1-ADA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the place that you've been looking for" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaR-us-h91">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8E-X9-GXD">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q8E-X9-GXD" firstAttribute="top" secondItem="HaR-us-h91" secondAttribute="bottom" constant="10" id="9Yr-i3-fDl"/>
+                                                <constraint firstItem="HaR-us-h91" firstAttribute="top" secondItem="RKk-h1-ADA" secondAttribute="top" constant="13" id="O3s-at-k58">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="12"/>
+                                                </constraint>
+                                                <constraint firstAttribute="trailing" secondItem="q8E-X9-GXD" secondAttribute="trailing" constant="8" id="P3b-UW-gng"/>
+                                                <constraint firstItem="q8E-X9-GXD" firstAttribute="leading" secondItem="RKk-h1-ADA" secondAttribute="leading" constant="8" id="SGw-30-dgL"/>
+                                                <constraint firstItem="HaR-us-h91" firstAttribute="leading" secondItem="RKk-h1-ADA" secondAttribute="leading" constant="8" id="TfU-KJ-gRd"/>
+                                                <constraint firstAttribute="bottom" secondItem="HaR-us-h91" secondAttribute="bottom" constant="10" id="cei-Fe-hwC">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="38"/>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="q8E-X9-GXD" secondAttribute="bottom" constant="7" id="yKJ-Yq-gBv"/>
+                                                <constraint firstAttribute="trailing" secondItem="HaR-us-h91" secondAttribute="trailing" constant="8" id="zGX-AB-uEs"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="HaR-us-h91"/>
+                                                    <exclude reference="q8E-X9-GXD"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="O3s-at-k58"/>
+                                                    <exclude reference="TfU-KJ-gRd"/>
+                                                    <exclude reference="cei-Fe-hwC"/>
+                                                    <exclude reference="zGX-AB-uEs"/>
+                                                    <exclude reference="9Yr-i3-fDl"/>
+                                                    <exclude reference="P3b-UW-gng"/>
+                                                    <exclude reference="SGw-30-dgL"/>
+                                                    <exclude reference="yKJ-Yq-gBv"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="HaR-us-h91"/>
+                                                    <include reference="q8E-X9-GXD"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="O3s-at-k58"/>
+                                                    <include reference="TfU-KJ-gRd"/>
+                                                    <include reference="cei-Fe-hwC"/>
+                                                    <include reference="zGX-AB-uEs"/>
+                                                    <include reference="9Yr-i3-fDl"/>
+                                                    <include reference="P3b-UW-gng"/>
+                                                    <include reference="SGw-30-dgL"/>
+                                                    <include reference="yKJ-Yq-gBv"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="HaR-us-h91" id="fPo-PW-ofB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="iI0-gK-uo8" id="jnY-gm-pKa"/>
                                     <outlet property="delegate" destination="iI0-gK-uo8" id="FX2-Qh-ZIi"/>
@@ -351,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LcW-yl-hld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.5" y="718.5"/>
+            <point key="canvasLocation" x="1042.5" y="716.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OvN-e8-SbJ">

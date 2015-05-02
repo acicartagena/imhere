@@ -8,6 +8,8 @@
 
 #import "IMHLocationPickerViewController.h"
 
+#import "IMHLocationTableViewCell.h"
+
 #import "IMHLocationManager.h"
 #import "IMHLocation.h"
 
@@ -46,15 +48,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    IMHLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:locationTableViewCellIdentifier];
+    IMHLocation *location = [self.locationArray objectAtIndex:indexPath.row];
     
+    cell.nameLabel.text = location.locationName;
+    return cell;
 }
 
 #pragma mark - uitextfield delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    __weak typeof(self) weakSelf = self;
     [[IMHLocationManager sharedManager] forwardGeocodeLocationWithName:textField.text withCompletionBlock:^(NSArray *locations) {
         NSLog(@"Location: %@",locations);
+        
+        if (locations == nil){
+            [[[UIAlertView alloc] initWithTitle:@"Oops.." message:@"Location not found. Try another address." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        }
+        weakSelf.locationArray = locations;
+        [weakSelf.tableView reloadData];
     }];
     return YES;
 }

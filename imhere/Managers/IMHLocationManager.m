@@ -9,6 +9,9 @@
 #import "IMHLocationManager.h"
 
 #import <CoreLocation/CoreLocation.h>
+#import <AddressBookUI/AddressBookUI.h>
+
+
 #import "IMHLocation.h"
 
 static IMHLocationManager *_instance = nil;
@@ -46,6 +49,9 @@ static IMHLocationManager *_instance = nil;
                       completionHandler:^(NSArray *placemarks, NSError *error) {
                           
                           if (placemarks.count == 0){
+                              if (completionBlock){
+                                  completionBlock(nil);
+                              }
                               return;
                           }
                                               
@@ -59,6 +65,7 @@ static IMHLocationManager *_instance = nil;
                               loc.latitude = [NSString stringWithFormat:@"%f",coordinate.latitude];
                               loc.longitude = [NSString stringWithFormat:@"%f",coordinate.longitude];
                               loc.locationName = placemark.name;
+                              loc.address = ABCreateStringWithAddressDictionary (placemark.addressDictionary,NO);
                               
                               [locations addObject:loc];
                           }
