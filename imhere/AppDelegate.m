@@ -29,6 +29,13 @@
     
     
     // #2 Register client for push notifications
+    UIUserNotificationType types = UIUserNotificationTypeBadge |
+    UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    
+    UIUserNotificationSettings *mySettings =
+    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     [PubNub setDelegate:self];
@@ -44,7 +51,7 @@
     
     // I have remote notifs now, subscribe to this channel
 #pragma mark todo actual channel
-    [[IMHPubNubManager sharedManager] joinChannel:@"61424448667" completion:nil];
+    [[IMHPubNubManager sharedManager] joinChannel:@"testchannel" completion:nil];
 }
 
 

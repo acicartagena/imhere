@@ -46,11 +46,13 @@ withCompletionHandlingBlock:^(PNSubscriptionProcessState state, NSArray *channel
         switch (state) {
             case PNSubscriptionProcessNotSubscribedState:
                 // There should be a reason because of which subscription failed and it can be found in 'error' instance
-                completionBlock(error);
+                if (completionBlock)
+                    completionBlock(error);
                 break;
             case PNSubscriptionProcessSubscribedState:
                 // PubNub client completed subscription on specified set of channels.
-                completionBlock(nil);
+                if (completionBlock)
+                    completionBlock(nil);
                 break;
             default:
                 break;
