@@ -12,6 +12,10 @@
 
 static IMHPubNubManager *_instance = nil;
 
+@interface IMHPubNubManager ()<PNDelegate>
+
+@end
+
 @implementation IMHPubNubManager
 
 + (IMHPubNubManager *)sharedManager
@@ -32,6 +36,8 @@ static IMHPubNubManager *_instance = nil;
                                                        secretKey:@"sec-c-YmFlZTc4MDQtNjM2Yy00MTZiLWFjMGYtYzkzMGFmODI5N2Q1"];
         [PubNub setConfiguration:configuration];
         [PubNub connect];
+        
+        [PubNub setDelegate:self];
     }
     return self;
 }
@@ -59,6 +65,42 @@ withCompletionHandlingBlock:^(PNSubscriptionProcessState state, NSArray *channel
                 break;
         }
     }];
+}
+
+#pragma mark - delegate
+- (void)pubnubClient:(PubNub *)client error:(PNError *)error
+{
+    NSLog(@"pubnub client error: %@",error);
+}
+
+- (void)pubnubClient:(PubNub *)client didDisconnectFromOrigin:(NSString *)origin withError:(PNError *)error
+{
+    NSLog(@"pubnub client disconnect from origin: %@",error);
+}
+
+- (void)pubnubClient:(PubNub *)client willSuspendWithBlock:(void(^)(void(^)(void(^)(void))))preSuspensionBlock
+{
+    NSLog(@"pubnub suspend");
+}
+
+- (void)pubnubClient:(PubNub *)client didSubscribeOn:(NSArray *)channelObjects
+{
+    NSLog(@"pubnub subscribe on: %@",channelObjects);
+}
+
+- (void)pubnubClient:(PubNub *)client didEnablePushNotificationsOnChannels:(NSArray *)channels
+{
+    NSLog(@"pubnub enable push: %@",channels);
+}
+
+- (void)pubnubClient:(PubNub *)client pushNotificationEnableDidFailWithError:(PNError *)error
+{
+    NSLog(@"push notif enable fail: %@",error);
+}
+
+- (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message
+{
+    NSLog(@"pubnub receive message: %@",message);
 }
 
 @end
