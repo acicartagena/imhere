@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PNImports.h"
+
 
 @interface IMHPubNubManager : NSObject
 

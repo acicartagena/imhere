@@ -11,6 +11,7 @@
 
 
 #import "IMHNote.h"
+#import "IMHReply.h"
 
 static IMHConnectionManager *_instance = nil;
 
@@ -55,6 +56,22 @@ static IMHConnectionManager *_instance = nil;
     }];
 }
 
+- (NSURLSessionDataTask *)registerUID:(NSString *) uid channel:(NSString *) channel completion:(void(^)(NSError *error)) completionBlock
+{
+    NSString *pathName = @"register/";
+    NSDictionary *parameters = @{@"uid": uid, @"channel": channel};
+    
+    return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (completionBlock){
+            completionBlock(nil);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completionBlock){
+            completionBlock(error);
+        }
+    }];
+}
+
 - (NSURLSessionDataTask *)sendMessage:(IMHNote *)note completion:(void (^)(NSError *error))completionBlock
 {
     NSString *pathName = @"send/";
@@ -62,9 +79,28 @@ static IMHConnectionManager *_instance = nil;
                                  @"to":note.to,
                                  @"lat":note.latitude,
                                  @"long":note.longitude,
-                                 @"timestamp":[note timestampString],
+                                 @"send_timestamp":[note timestampString],
                                  @"radius":@(note.radius),
                                  @"loc_name":note.loc_name,
+                                 @"message":note.message};
+    
+    return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (completionBlock){
+            completionBlock(nil);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completionBlock){
+            completionBlock(error);
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *) replyMessage:(IMHReply *)note completion:(void (^)(NSError *error))completionBlock
+{
+    NSString *pathName = @"reply/";
+    NSDictionary *parameters = @{@"from":note.from,
+                                 @"parent_id":note.parent_id,
+                                 @"send_timestamp":[note timestampString],
                                  @"message":note.message};
     
     return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
