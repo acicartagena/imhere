@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSString *message;
 @property (strong, nonatomic) NSDate *timestamp;
 
+- (NSString *)timestampString;
+
 @end
