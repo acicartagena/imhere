@@ -59,11 +59,20 @@ static IMHLocationManager *_instance = nil;
 {
     if (!_locationManager){
         _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         _locationManager.delegate = self;
         _locationManager.distanceFilter = kCLDistanceFilterNone;
         
-        [_locationManager startUpdatingLocation];
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
+            [_locationManager requestAlwaysAuthorization];
+        }
+        
+        if ([CLLocationManager locationServicesEnabled]){
+            [_locationManager startUpdatingLocation];
+        }
+        
+        
+        
     }
     return _locationManager;
 }
@@ -77,6 +86,7 @@ static IMHLocationManager *_instance = nil;
 }
 
 #pragma mark - cllocationmanager delegate
+
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
