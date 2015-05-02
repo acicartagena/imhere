@@ -161,7 +161,8 @@
     if ([self shouldRenderPlaceholder]) {
         CGRect frame = self.bounds;
         frame.origin.x += 5.0;
-        frame.size.height = 5.0f;
+        frame.origin.y += 10.0;
+        frame.size.height = 16.0f;
         _placeholderLabel.frame = frame;
         _placeholderLabel.textColor = _placeholderColor;
         _placeholderLabel.hidden = NO;
