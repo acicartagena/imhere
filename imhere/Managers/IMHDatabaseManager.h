@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+
 @interface IMHDatabaseManager : NSObject
+
++ (IMHDatabaseManager *)sharedManager;
 
 @end

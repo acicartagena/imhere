@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 imhere. All rights reserved.
 //
 
-#import "Note.h"
+#import "IMHNote.h"
 
-@implementation Note
+@implementation IMHNote
+
++ (BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 
 @end

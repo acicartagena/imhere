@@ -8,6 +8,7 @@
 
 
 #import "IMHConnectionManager.h"
+#import "AFNetworkActivityLogger.h"
 
 static IMHConnectionManager *_instance = nil;
 
@@ -30,6 +31,9 @@ static IMHConnectionManager *_instance = nil;
         [config setURLCache:cache];
         _instance = [[IMHConnectionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl] sessionConfiguration:config];
         _instance.responseSerializer = [AFJSONResponseSerializer serializer];
+        
+        [[AFNetworkActivityLogger sharedLogger] startLogging];
+        [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelDebug];
 
     });
     return _instance;

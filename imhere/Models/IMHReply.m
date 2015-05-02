@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 imhere. All rights reserved.
 //
 
-#import "Reply.h"
+#import "IMHReply.h"
 
-@implementation Reply
+@implementation IMHReply
+
++ (BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 
 @end
