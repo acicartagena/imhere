@@ -22,6 +22,10 @@
 		60816CC21AF49BB700E709C9 /* IMHConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CC11AF49BB700E709C9 /* IMHConnectionManager.m */; };
 		60816CC51AF49E0900E709C9 /* IMHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CC41AF49E0900E709C9 /* IMHSettingsViewController.m */; };
 		60816CC91AF4B15800E709C9 /* IMHDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CC81AF4B15800E709C9 /* IMHDatabaseManager.m */; };
+		60816CCC1AF4BC9900E709C9 /* IMHNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CCB1AF4BC9900E709C9 /* IMHNote.m */; };
+		60816CCF1AF4BCAA00E709C9 /* IMHReply.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CCE1AF4BCAA00E709C9 /* IMHReply.m */; };
+		60816CD21AF4BCFE00E709C9 /* IMHFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CD11AF4BCFE00E709C9 /* IMHFeed.m */; };
+		60816CD51AF4BF8A00E709C9 /* IMHLocationPing.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CD41AF4BF8A00E709C9 /* IMHLocationPing.m */; };
 		CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +71,14 @@
 		60816CC61AF4A2C100E709C9 /* IMHConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMHConstants.h; sourceTree = "<group>"; };
 		60816CC71AF4B15800E709C9 /* IMHDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHDatabaseManager.h; path = Managers/IMHDatabaseManager.h; sourceTree = "<group>"; };
 		60816CC81AF4B15800E709C9 /* IMHDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHDatabaseManager.m; path = Managers/IMHDatabaseManager.m; sourceTree = "<group>"; };
+		60816CCA1AF4BC9900E709C9 /* IMHNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHNote.h; path = Models/IMHNote.h; sourceTree = "<group>"; };
+		60816CCB1AF4BC9900E709C9 /* IMHNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHNote.m; path = Models/IMHNote.m; sourceTree = "<group>"; };
+		60816CCD1AF4BCAA00E709C9 /* IMHReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHReply.h; path = Models/IMHReply.h; sourceTree = "<group>"; };
+		60816CCE1AF4BCAA00E709C9 /* IMHReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHReply.m; path = Models/IMHReply.m; sourceTree = "<group>"; };
+		60816CD01AF4BCFE00E709C9 /* IMHFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHFeed.h; path = Models/IMHFeed.h; sourceTree = "<group>"; };
+		60816CD11AF4BCFE00E709C9 /* IMHFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHFeed.m; path = Models/IMHFeed.m; sourceTree = "<group>"; };
+		60816CD31AF4BF8A00E709C9 /* IMHLocationPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHLocationPing.h; path = Models/IMHLocationPing.h; sourceTree = "<group>"; };
+		60816CD41AF4BF8A00E709C9 /* IMHLocationPing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHLocationPing.m; path = Models/IMHLocationPing.m; sourceTree = "<group>"; };
 		B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.debug.xcconfig"; sourceTree = "<group>"; };
 		BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imhere.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +209,14 @@
 		60816CAF1AF483A600E709C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				60816CCA1AF4BC9900E709C9 /* IMHNote.h */,
+				60816CCB1AF4BC9900E709C9 /* IMHNote.m */,
+				60816CCD1AF4BCAA00E709C9 /* IMHReply.h */,
+				60816CCE1AF4BCAA00E709C9 /* IMHReply.m */,
+				60816CD01AF4BCFE00E709C9 /* IMHFeed.h */,
+				60816CD11AF4BCFE00E709C9 /* IMHFeed.m */,
+				60816CD31AF4BF8A00E709C9 /* IMHLocationPing.h */,
+				60816CD41AF4BF8A00E709C9 /* IMHLocationPing.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -359,7 +379,11 @@
 			files = (
 				60816CBB1AF4992A00E709C9 /* IMHLocationPickerViewController.m in Sources */,
 				60816CB21AF4849D00E709C9 /* IMHSendViewController.m in Sources */,
+				60816CD21AF4BCFE00E709C9 /* IMHFeed.m in Sources */,
 				60816C8D1AF4761B00E709C9 /* ViewController.m in Sources */,
+				60816CCC1AF4BC9900E709C9 /* IMHNote.m in Sources */,
+				60816CCF1AF4BCAA00E709C9 /* IMHReply.m in Sources */,
+				60816CD51AF4BF8A00E709C9 /* IMHLocationPing.m in Sources */,
 				60816CAD1AF47B4A00E709C9 /* IMHLocationManager.m in Sources */,
 				60816C8A1AF4761B00E709C9 /* AppDelegate.m in Sources */,
 				60816CB51AF498E600E709C9 /* IMHHomeViewController.m in Sources */,
