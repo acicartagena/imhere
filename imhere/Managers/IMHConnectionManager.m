@@ -56,11 +56,8 @@ static IMHConnectionManager *_instance = nil;
     }];
 }
 
-- (NSURLSessionDataTask *)registerUID:(NSString *) uid channel:(NSString *) channel completion:(void(^)(NSError *error)) completionBlock
+- (NSURLSessionDataTask *) handlePost:(NSString *)pathName withParameters:(NSDictionary *) parameters completion:(void(^)(NSError *error)) completionBlock
 {
-    NSString *pathName = @"register/";
-    NSDictionary *parameters = @{@"uid": uid, @"channel": channel};
-    
     return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         if (completionBlock){
             completionBlock(nil);
@@ -70,6 +67,14 @@ static IMHConnectionManager *_instance = nil;
             completionBlock(error);
         }
     }];
+}
+
+- (NSURLSessionDataTask *)registerUID:(NSString *) uid channel:(NSString *) channel completion:(void(^)(NSError *error)) completionBlock
+{
+    NSString *pathName = @"register/";
+    NSDictionary *parameters = @{@"uid": uid, @"channel": channel};
+    
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
 }
 
 - (NSURLSessionDataTask *)sendMessage:(IMHNote *)note completion:(void (^)(NSError *error))completionBlock
@@ -84,15 +89,7 @@ static IMHConnectionManager *_instance = nil;
                                  @"loc_name":note.loc_name,
                                  @"message":note.message};
     
-    return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (completionBlock){
-            completionBlock(nil);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        if (completionBlock){
-            completionBlock(error);
-        }
-    }];
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
 }
 
 - (NSURLSessionDataTask *) replyMessage:(IMHReply *)note completion:(void (^)(NSError *error))completionBlock
@@ -103,15 +100,47 @@ static IMHConnectionManager *_instance = nil;
                                  @"send_timestamp":[note timestampString],
                                  @"message":note.message};
     
-    return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (completionBlock){
-            completionBlock(nil);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        if (completionBlock){
-            completionBlock(error);
-        }
-    }];
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
+}
+
+- (NSURLSessionDataTask *) fetchUnread:(NSString *)uid completion:(void (^)(NSError *error))completionBlock
+{
+    NSString *pathName = @"fetch/";
+    NSDictionary *parameters = @{@"uid": uid};
+    
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
+}
+
+- (NSURLSessionDataTask *) fetchAll:(NSString *)uid completion:(void (^)(NSError *error))completionBlock
+{
+    NSString *pathName = @"fetchall/";
+    NSDictionary *parameters = @{@"uid": uid};
+    
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
+}
+
+- (NSURLSessionDataTask *) readReceipt:(NSString *)uid messageID:(NSString *)messageID completion:(void (^)(NSError *error))completionBlock
+{
+    NSString *pathName = @"imread/";
+    NSDictionary *parameters = @{@"uid": uid, @"msg_id": messageID};
+    
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
+}
+
+- (NSURLSessionDataTask *) getNoteReplies:(NSString *)uid messageID:(NSString *)messageID completion:(void (^)(NSError *error))completionBlock
+{
+    NSString *pathName = @"note/";
+    NSDictionary *parameters = @{@"uid": uid, @"note_id": messageID};
+    
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
+}
+
+- (NSURLSessionDataTask *) locationPing:(NSString *)uid lat:(NSString *)lat longt:(NSString *)longt completion:(void (^)(NSError *error)) completionBlock
+{
+    NSString *pathName = @"fetch/";
+    NSDictionary *parameters = @{@"uid": uid, @"msg_id": lat, @"long": longt};
+    
+    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
 }
 
 @end

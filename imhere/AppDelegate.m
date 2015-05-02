@@ -70,9 +70,11 @@
     } else if ([alert isKindOfClass:[NSDictionary class]]) {
         message = [alert objectForKey:@"alert"];
     }
+    
+    // TODO Delete alert code and actually do something -- refresh?
     if (alert) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:message
-                                                            message:@"Sent Via PubNub Mobile Gateway."  delegate:self
+                                                            message:message  delegate:self
                                                   cancelButtonTitle:@"Thanks PubNub!"
                                                   otherButtonTitles:@"Send Me More!", nil];
         [alertView show];
