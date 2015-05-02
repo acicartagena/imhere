@@ -10,4 +10,8 @@
 
 @interface IMHUserDefaultsManager : NSObject
 
++ (IMHUserDefaultsManager *)sharedManager;
+
+@property (strong, nonatomic) NSString *userId;
+
 @end

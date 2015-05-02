@@ -10,4 +10,6 @@
 
 @interface IMHPubNubManager : NSObject
 
++ (IMHPubNubManager *)sharedManager;
+
 @end
