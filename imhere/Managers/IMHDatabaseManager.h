@@ -10,6 +10,7 @@
 
 @class IMHNote;
 @class IMHReply;
+@class IMHThread;
 
 @interface IMHDatabaseManager : NSObject
 
@@ -20,5 +21,7 @@
 
 - (void)saveReplies:(NSArray *)replies completionBlock:(void (^)(void))completionBlock;
 - (void)saveReply:(IMHReply *)reply completionBlock:(void (^)(void))completionBlock;
+
+- (IMHThread *)getThreadForNoteId:(NSString *)noteId;
 
 @end

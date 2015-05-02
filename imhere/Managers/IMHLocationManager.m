@@ -7,6 +7,7 @@
 //
 
 #import "IMHLocationManager.h"
+#import "IMHConnectionManager.h"
 
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBookUI/AddressBookUI.h>
@@ -16,9 +17,12 @@
 
 static IMHLocationManager *_instance = nil;
 
-@interface IMHLocationManager ()
+@interface IMHLocationManager ()<CLLocationManagerDelegate>
 
 @property (strong, nonatomic) CLGeocoder *geocoder;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSMutableArray *locations;
 
 @end
 
@@ -42,6 +46,39 @@ static IMHLocationManager *_instance = nil;
     return _geocoder;
 }
 
+- (CLLocationManager *)locationManager
+{
+    if (!_locationManager){
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationManager.delegate = self;
+    }
+    return _locationManager;
+}
+
+- (NSMutableArray *)locations
+{
+    if (!_locations){
+        _locations = [[NSMutableArray alloc] init];
+    }
+    return _locations;
+}
+
+#pragma mark - cllocationmanager delegate
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    CLLocationCoordinate2D coordinate = newLocation.coordinate;
+    IMHLocation *loc = [[IMHLocation alloc] init];
+    loc.latitude = [NSString stringWithFormat:@"%f",coordinate.latitude];
+    loc.longitude = [NSString stringWithFormat:@"%f",coordinate.longitude];
+    [[IMHConnectionManager sharedManager] pingLocation:loc];
+    
+}
+
+#pragma mark - public methods
 - (void)forwardGeocodeLocationWithName:(NSString *)locationName withCompletionBlock:(void (^)(NSArray *locations))completionBlock
 {
  

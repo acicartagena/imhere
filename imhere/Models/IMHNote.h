@@ -8,19 +8,23 @@
 
 #import "JSONModel.h"
 
+@protocol IMHNote <NSObject>
+@end
+
 @interface IMHNote : JSONModel
 
-@property (strong, nonatomic) NSString *id;
+@property (nonatomic, assign) NSInteger identification;
 @property (strong, nonatomic) NSString *from;
 @property (strong, nonatomic) NSArray *to;
 @property (strong, nonatomic) NSString *message;
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *loc_name;
+
 @property (strong, nonatomic) NSDate *send_timestamp;
 @property (strong, nonatomic) NSDate *rcv_timestamp;
-@property (nonatomic, assign) NSInteger radius;
 
+@property (nonatomic, assign) NSInteger radius;
 
 - (NSString *)timestampString;
 

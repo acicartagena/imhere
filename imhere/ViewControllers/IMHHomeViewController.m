@@ -11,7 +11,9 @@
 
 #import "IMHNoteFeedTableViewCell.h"
 
-
+#import "IMHConnectionManager.h"
+#import "IMHDatabaseManager.h"
+#import "IMHUserDefaultsManager.h"
 
 @interface IMHHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -30,11 +32,24 @@
     [super viewDidLoad];
     
     [self setupUI];
+    
+    [self getData];
 }
 
 - (void)setupUI
 {
     [self.tableView registerClass:[IMHNoteFeedTableViewCell class] forCellReuseIdentifier:noteFeedTableViewCellIdentifier];
+}
+
+- (void)getData
+{
+    [[IMHConnectionManager sharedManager] fetchAll:@"61424448667" completion:^(NSError *error) {
+        
+        self.notes = [[IMHUserDefaultsManager sharedManager].notes allValues];
+        [self.tableView reloadData];
+        
+        NSLog(@"yey");
+    }];
 }
 
 #pragma mark - propeties
@@ -51,13 +66,13 @@
 {
     IMHNote *note = [self.notes objectAtIndex:indexPath.row];
     self.prototypeCell.note = note;
-    
-    return [self.prototypeCell getHeightForNote:note];
+    CGFloat height = [self.prototypeCell getHeightForNote:note];
+    return height;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-#warning to code later
+
 }
 
 #pragma mark - uitableview data source
@@ -73,6 +88,9 @@
     
     IMHNote *note = [self.notes objectAtIndex:indexPath.row];
     noteCell.note = note;
+    
+    [noteCell setNeedsUpdateConstraints];
+    [noteCell updateConstraintsIfNeeded];
     
     return noteCell;
 }

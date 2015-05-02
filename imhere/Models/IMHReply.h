@@ -8,9 +8,12 @@
 
 #import "JSONModel.h"
 
+@protocol IMHReply <NSObject>
+@end
+
 @interface IMHReply : JSONModel
 
-@property (strong, nonatomic) NSString *id;
+@property (nonatomic, assign) NSInteger identification;
 @property (strong, nonatomic) NSString *parent_id;
 @property (strong, nonatomic) NSString *from;
 @property (strong, nonatomic) NSString *message;

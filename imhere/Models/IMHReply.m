@@ -24,7 +24,7 @@
         self.send_timestamp = [decoder decodeObjectForKey:@"send_timestamp"];
         self.rcv_timestamp = [decoder decodeObjectForKey:@"rcv_timestamp"];
         self.message = [decoder decodeObjectForKey:@"message"];
-        self.id = [decoder decodeObjectForKey:@"id"];
+        self.identification = [decoder decodeIntegerForKey:@"id"];
         self.parent_id = [decoder decodeObjectForKey:@"parent_id"];
     }
     return self;
@@ -36,7 +36,7 @@
     [encoder encodeObject:self.send_timestamp forKey:@"send_timestamp"];
     [encoder encodeObject:self.rcv_timestamp forKey:@"rcv_timestamp"];
     [encoder encodeObject:self.message forKey:@"message"];
-    [encoder encodeObject:self.id forKey:@"id"];
+    [encoder encodeInteger:self.identification forKey:@"id"];
     [encoder encodeObject:self.parent_id forKey:@"parent_id"];
 }
 

@@ -23,7 +23,7 @@
         self.rcv_timestamp = [decoder decodeObjectForKey:@"rcv_timestamp"];
         self.radius = [decoder decodeIntegerForKey:@"radius"];
         self.message = [decoder decodeObjectForKey:@"message"];
-        self.id = [decoder decodeObjectForKey:@"id"];
+        self.identification = [decoder decodeIntegerForKey:@"id"];
         
     }
     return self;
@@ -40,7 +40,7 @@
     [encoder encodeObject:self.rcv_timestamp forKey:@"rcv_timestamp"];
     [encoder encodeInteger:self.radius forKey:@"radius"];
     [encoder encodeObject:self.message forKey:@"message"];
-    [encoder encodeObject:self.id forKey:@"id"];
+    [encoder encodeInteger:self.identification forKey:@"id"];
 }
 
 #pragma mark - json model

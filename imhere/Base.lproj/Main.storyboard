@@ -168,6 +168,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Send" style="plain" id="ceh-3i-9fg">
                             <color key="tintColor" red="0.22745098039215686" green="0.81176470588235294" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="sendMessage:" destination="vXZ-lx-hvc" id="pE9-YG-CqO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -308,6 +311,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qmK-Ze-SHU" id="1D1-9k-CeM"/>
+                                    <outlet property="delegate" destination="qmK-Ze-SHU" id="96W-RQ-AA5"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.22745098039215686" green="0.81176470588235294" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

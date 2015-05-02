@@ -19,5 +19,7 @@
 
 - (NSURLSessionDataTask *)heya;
 - (NSURLSessionDataTask *)sendMessage:(IMHNote *)note completion:(void (^)(NSError *error))completionBlock;
+- (NSURLSessionDataTask *)fetchAll:(NSString *)userId completion:(void (^)(NSError *error))completionBlock;
+- (NSURLSessionDataTask *)pingLocation:(IMHLocation *)location;
 
 @end

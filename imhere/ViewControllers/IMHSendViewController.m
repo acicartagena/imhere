@@ -105,8 +105,8 @@
     }
     
 #warning to textfield processing
-    self.note.to = @[@"aci"];//@[self.toTextField.text];
-    self.note.from = @"aci";
+    self.note.to = @[@"61424448667"];//@[self.toTextField.text];
+    self.note.from = @"61424448667";
     
     self.note.message = self.messageTextView.text;
     self.note.latitude =  self.selectedLocation == nil ? @"-33.8678500" : self.selectedLocation.latitude;

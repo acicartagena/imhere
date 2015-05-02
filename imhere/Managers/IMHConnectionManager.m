@@ -9,9 +9,12 @@
 
 #import "IMHConnectionManager.h"
 
+#import "IMHUserDefaultsManager.h"
 
 #import "IMHNote.h"
 #import "IMHReply.h"
+#import "IMHFeed.h"
+#import "IMHLocation.h"
 
 static IMHConnectionManager *_instance = nil;
 
@@ -84,10 +87,19 @@ static IMHConnectionManager *_instance = nil;
                                  @"loc_name":note.loc_name,
                                  @"message":note.message};
     
+    
     return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (completionBlock){
-            completionBlock(nil);
-        }
+        IMHNote *note2 = note;
+        note2.identification = [[responseObject objectForKey:@"id"] integerValue];
+        
+        [[IMHUserDefaultsManager sharedManager].notes setObject:note2 forKey:@(note2.identification)];
+        
+//        [[IMHDatabaseManager sharedManager] saveNote:note2 completionBlock:^{
+//            if (completionBlock){
+//                completionBlock(nil);
+//            }
+//        }];
+        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (completionBlock){
             completionBlock(error);
@@ -112,6 +124,52 @@ static IMHConnectionManager *_instance = nil;
             completionBlock(error);
         }
     }];
+}
+
+- (NSURLSessionDataTask *)fetchAll:(NSString *)userId completion:(void (^)(NSError *error))completionBlock
+{
+    NSString *pathName = @"fetchall/";
+    NSDictionary *parameters = @{@"uid":userId};
+    
+    return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSError *error = nil;
+        
+        NSDictionary *dict = (NSDictionary *)responseObject;
+        IMHFeed *feed = [[IMHFeed alloc] initWithDictionary:dict error:&error];
+        
+        for (IMHNote *note in feed.notes){
+            [[IMHUserDefaultsManager sharedManager].notes setObject:note forKey:@(note.identification)];
+        }
+        
+        if (completionBlock){
+            completionBlock(nil);
+        }
+        
+//        [[IMHDatabaseManager sharedManager] saveNotes:feed.notes completionBlock:^{
+//            NSLog(@"finished saving notes");
+//            [[IMHDatabaseManager sharedManager] saveReplies:feed.replies completionBlock:^{
+//                NSLog(@"finished saving replies");
+//                if (completionBlock){
+//                    completionBlock(nil);
+//                }
+//            }];
+//        }];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completionBlock){
+            completionBlock(error);
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *)pingLocation:(IMHLocation *)location
+{
+    NSString *pathName = @"loc_ping/";
+    NSDictionary *parameters = @{@"uid":@"61424448667",@"lat":location.latitude,@"long":location.longitude};
+    return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"ping yey");
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"ping aww");
+    } ];
 }
 
 @end
