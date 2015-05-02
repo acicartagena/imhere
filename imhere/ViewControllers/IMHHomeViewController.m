@@ -69,7 +69,7 @@
     CGFloat height = [self.prototypeCell getHeightForNote:note];
     
     if (height < 200.0f){
-        height = 200.0f;
+        height = 150.0f;
     }
     
     return height;

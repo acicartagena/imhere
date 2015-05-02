@@ -133,7 +133,6 @@
 
 - (void)setNote:(IMHNote *)note
 {
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
     _note = note;
     
     
