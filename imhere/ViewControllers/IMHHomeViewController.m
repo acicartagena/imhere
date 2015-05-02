@@ -67,6 +67,11 @@
     IMHNote *note = [self.notes objectAtIndex:indexPath.row];
     self.prototypeCell.note = note;
     CGFloat height = [self.prototypeCell getHeightForNote:note];
+    
+    if (height < 200.0f){
+        height = 200.0f;
+    }
+    
     return height;
 }
 

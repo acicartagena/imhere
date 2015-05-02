@@ -37,6 +37,15 @@ static IMHLocationManager *_instance = nil;
     return _instance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self){
+        [self locationManager];
+    }
+    return self;
+}
+
 #pragma mark - properties
 - (CLGeocoder *)geocoder
 {
@@ -52,6 +61,9 @@ static IMHLocationManager *_instance = nil;
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         _locationManager.delegate = self;
+        _locationManager.distanceFilter = 10;
+        
+        [_locationManager startUpdatingLocation];
     }
     return _locationManager;
 }

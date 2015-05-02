@@ -49,22 +49,36 @@
             endingLineNumber = "103"
             landmarkName = "-sendMessage:completion:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "imhere/Managers/IMHLocationManager.m"
-            timestampString = "452275566.021758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-locationManager"
-            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__47-[IMHConnectionManager sendMessage:completion:]_block_invoke"
+                  moduleName = "imhere"
+                  urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHConnectionManager.m"
+                  timestampString = "452290569.564561"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "390">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__47-[IMHConnectionManager sendMessage:completion:]_block_invoke131"
+                  moduleName = "imhere"
+                  urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHConnectionManager.m"
+                  timestampString = "452290569.565119"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "67">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -115,7 +129,7 @@
                   symbolName = "-[IMHDatabaseManager saveReply:completionBlock:]"
                   moduleName = "imhere"
                   urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHDatabaseManager.m"
-                  timestampString = "452285434.866586"
+                  timestampString = "452290569.570232"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
@@ -129,7 +143,7 @@
                   symbolName = "__48-[IMHDatabaseManager saveReply:completionBlock:]_block_invoke"
                   moduleName = "imhere"
                   urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHDatabaseManager.m"
-                  timestampString = "452285434.866835"
+                  timestampString = "452290569.570528"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
@@ -241,7 +255,7 @@
                   symbolName = "__47-[IMHDatabaseManager saveNote:completionBlock:]_block_invoke_2"
                   moduleName = "imhere"
                   urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHDatabaseManager.m"
-                  timestampString = "452285434.873628"
+                  timestampString = "452290569.576724"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "192"
@@ -255,7 +269,7 @@
                   symbolName = "__47-[IMHDatabaseManager saveNote:completionBlock:]_block_invoke_2"
                   moduleName = "imhere"
                   urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHDatabaseManager.m"
-                  timestampString = "452285434.873945"
+                  timestampString = "452290569.576975"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "192"
@@ -287,7 +301,7 @@
                   symbolName = "-[IMHDatabaseManager init]"
                   moduleName = "imhere"
                   urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHDatabaseManager.m"
-                  timestampString = "452285434.875519"
+                  timestampString = "452290569.5787"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -301,7 +315,7 @@
                   symbolName = "__26-[IMHDatabaseManager init]_block_invoke"
                   moduleName = "imhere"
                   urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHDatabaseManager.m"
-                  timestampString = "452285434.875782"
+                  timestampString = "452290569.57908"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "73"
@@ -318,57 +332,109 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "imhere/Managers/IMHConnectionManager.m"
-            timestampString = "452285131.874253"
+            timestampString = "452286739.897833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "-readReceipt:messageID:completion:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[IMHConnectionManager fetchAll:completion:]_block_invoke"
-                  moduleName = "imhere"
-                  urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHConnectionManager.m"
-                  timestampString = "452285434.877404"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "1039">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[IMHConnectionManager fetchAll:completion:]_block_invoke"
-                  moduleName = "imhere"
-                  urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHConnectionManager.m"
-                  timestampString = "452285434.877618"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "1114">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[IMHConnectionManager fetchAll:completion:]_block_invoke156"
-                  moduleName = "imhere"
-                  urlString = "file:///Users/aci/Desktop/imhere/imhere/Managers/IMHConnectionManager.m"
-                  timestampString = "452285434.877871"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "156"
-                  endingLineNumber = "156"
-                  offsetFromSymbolStart = "67">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imhere/AppDelegate.m"
+            timestampString = "452290569.171681"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-pubnubClient:didReceivePushNotificationEnabledChannels:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imhere/Managers/IMHUserDefaultsManager.m"
+            timestampString = "452287184.805206"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-notes"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imhere/Managers/IMHUserDefaultsManager.m"
+            timestampString = "452287187.421083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-notesArray"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imhere/3rdParty/UITableViewCell+DynamicCellHeight.m"
+            timestampString = "452289158.558606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-getTableViewCellHeight"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imhere/3rdParty/UITableViewCell+DynamicCellHeight.m"
+            timestampString = "452289159.362884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-getTableViewCellHeight"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "imhere/Managers/IMHLocationManager.m"
+            timestampString = "452290522.166839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

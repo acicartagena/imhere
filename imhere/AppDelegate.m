@@ -13,6 +13,8 @@
 
 #import "IMHUserDefaultsManager.h"
 
+#import "IMHLocationManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -26,6 +28,8 @@
     
     [[AFNetworkActivityLogger sharedLogger] startLogging];
     [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelDebug];
+    
+    [IMHLocationManager sharedManager];
     
     [JSONModel setGlobalKeyMapper:[[JSONKeyMapper alloc] initWithDictionary:@{@"long":@"longitude",@"lat":@"latitude", @"id":@"identification"}]];
     
@@ -100,6 +104,8 @@
     // “channels” will contain the array of channels which received push notifications.
     
     NSLog(@"DELEGATE: Received push notifications for these enabled channels: %@", channels);
+    
+    
 }
 
 // #8 Add PubNub delegate to catch when client fails to enable apns for channel
