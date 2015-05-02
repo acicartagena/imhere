@@ -10,4 +10,8 @@
 
 @interface IMHKeyboardToolbar : UIToolbar
 
+@property (weak, nonatomic) UIView *parentView;
+@property (nonatomic, copy) void (^clearKeyboard)(void);
+@property (nonatomic, copy) void (^closeKeyboard)(void);
+
 @end

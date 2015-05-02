@@ -8,7 +8,9 @@
 
 
 #import "IMHConnectionManager.h"
-#import "AFNetworkActivityLogger.h"
+
+
+#import "IMHNote.h"
 
 static IMHConnectionManager *_instance = nil;
 
@@ -29,17 +31,20 @@ static IMHConnectionManager *_instance = nil;
         config.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
         NSURLCache *cache = [[NSURLCache alloc] initWithMemoryCapacity:10 * 1204 * 1024 diskCapacity:50 * 1024 * 1024 diskPath:nil];
         [config setURLCache:cache];
+        
         _instance = [[IMHConnectionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl] sessionConfiguration:config];
         _instance.responseSerializer = [AFJSONResponseSerializer serializer];
+        _instance.requestSerializer = [AFJSONRequestSerializer serializer];
         
-        [[AFNetworkActivityLogger sharedLogger] startLogging];
-        [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelDebug];
-
+        NSMutableSet *set = [NSMutableSet setWithSet:_instance.responseSerializer.acceptableContentTypes];
+        [set addObject:@"text/html"];
+        _instance.responseSerializer.acceptableContentTypes = set;
+        
     });
     return _instance;
 }
 
-#pragma mark - properties
+#pragma mark - public methods
 
 - (NSURLSessionDataTask *)heya
 {
@@ -47,6 +52,29 @@ static IMHConnectionManager *_instance = nil;
         NSLog(@"yey");
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"aww");
+    }];
+}
+
+- (NSURLSessionDataTask *)sendMessage:(IMHNote *)note completion:(void (^)(NSError *error))completionBlock
+{
+    NSString *pathName = @"send/";
+    NSDictionary *parameters = @{@"from":note.from,
+                                 @"to":note.to,
+                                 @"lat":note.latitude,
+                                 @"long":note.longitude,
+                                 @"timestamp":[note timestampString],
+                                 @"radius":@(note.radius),
+                                 @"loc_name":note.loc_name,
+                                 @"message":note.message};
+    
+    return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        if (completionBlock){
+            completionBlock(nil);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completionBlock){
+            completionBlock(error);
+        }
     }];
 }
 

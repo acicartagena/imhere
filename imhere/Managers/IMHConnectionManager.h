@@ -11,9 +11,13 @@
 
 #import "IMHConstants.h"
 
+@class IMHNote;
+
 @interface IMHConnectionManager : AFHTTPSessionManager
 
 + (instancetype)sharedManager;
+
 - (NSURLSessionDataTask *)heya;
+- (NSURLSessionDataTask *)sendMessage:(IMHNote *)note completion:(void (^)(NSError *error))completionBlock;
 
 @end

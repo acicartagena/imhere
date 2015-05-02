@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const sendToLocationPickerSegueId = @"newNoteToLocationPicker";
+
 @interface IMHSendViewController : UIViewController
 
 @end

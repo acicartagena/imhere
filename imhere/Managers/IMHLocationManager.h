@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class IMHLocation;
+
 @interface IMHLocationManager : NSObject
 
 + (IMHLocationManager *)sharedManager;
+
+- (void)forwardGeocodeLocationWithName:(NSString *)locationName withCompletionBlock:(void (^)(NSArray *locations))completionBlock;
 
 @end

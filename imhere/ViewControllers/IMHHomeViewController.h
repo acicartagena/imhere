@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const homeToNewNoteSegueId = @"homeToNewNote";
+
 @interface IMHHomeViewController : UIViewController
 
 @end

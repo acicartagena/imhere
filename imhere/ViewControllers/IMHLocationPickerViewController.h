@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class IMHLocation;
+
+@protocol IMHLocationPickerDelegate <NSObject>
+
+- (void)locationSelected:(IMHLocation *)location;
+
+@end
+
 @interface IMHLocationPickerViewController : UIViewController
+
+@property (nonatomic, weak) id<IMHLocationPickerDelegate> delegate;
 
 @end

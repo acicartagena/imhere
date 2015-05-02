@@ -10,4 +10,12 @@
 
 @implementation JSONValueTransformer (IMHCustomDataTransformer)
 
+- (NSDate *)NSDateFromNSString:(NSString*)string
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-mm-dd hh:mm:ss"];
+    return [formatter dateFromString:string];
+}
+
+
 @end

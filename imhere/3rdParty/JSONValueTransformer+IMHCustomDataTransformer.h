@@ -10,4 +10,6 @@
 
 @interface JSONValueTransformer (IMHCustomDataTransformer)
 
+- (NSDate *)NSDateFromNSString:(NSString*)string;
+
 @end

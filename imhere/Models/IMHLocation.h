@@ -10,4 +10,8 @@
 
 @interface IMHLocation : JSONModel
 
+@property (strong, nonatomic) NSString *latitude;
+@property (strong, nonatomic) NSString *longitude;
+@property (strong, nonatomic) NSString *locationName;
+
 @end

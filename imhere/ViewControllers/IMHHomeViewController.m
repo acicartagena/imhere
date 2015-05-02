@@ -16,5 +16,9 @@
     [[IMHConnectionManager sharedManager] heya];
 }
 
+- (IBAction)newMessage:(id)sender
+{
+    [self performSegueWithIdentifier:homeToNewNoteSegueId sender:nil];
+}
 
 @end

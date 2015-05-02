@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IMHTextView : UIToolbar
+@interface IMHTextView : UITextView
+
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, copy) UIColor *placeholderColor;
+
+@property (nonatomic, readwrite) NSUInteger maxNumberOfLines;
+
+- (void)scrollToCaretPositonAnimated:(BOOL)animated;
 
 @end

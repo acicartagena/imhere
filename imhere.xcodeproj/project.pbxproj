@@ -26,6 +26,12 @@
 		60816CCF1AF4BCAA00E709C9 /* IMHReply.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CCE1AF4BCAA00E709C9 /* IMHReply.m */; };
 		60816CD21AF4BCFE00E709C9 /* IMHFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CD11AF4BCFE00E709C9 /* IMHFeed.m */; };
 		60816CD51AF4BF8A00E709C9 /* IMHLocationPing.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CD41AF4BF8A00E709C9 /* IMHLocationPing.m */; };
+		60816CD71AF4C97300E709C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60816CD61AF4C97300E709C9 /* CoreLocation.framework */; };
+		60816CDA1AF4CB6B00E709C9 /* IMHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CD91AF4CB6B00E709C9 /* IMHLocation.m */; };
+		60816CDE1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CDD1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.m */; };
+		60816CE11AF4D33C00E709C9 /* IMHUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CE01AF4D33C00E709C9 /* IMHUserDefaultsManager.m */; };
+		60816CE41AF4E02100E709C9 /* IMHKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CE31AF4E02100E709C9 /* IMHKeyboardToolbar.m */; };
+		60816CE71AF4E4D400E709C9 /* IMHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CE61AF4E4D400E709C9 /* IMHTextView.m */; };
 		CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +85,17 @@
 		60816CD11AF4BCFE00E709C9 /* IMHFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHFeed.m; path = Models/IMHFeed.m; sourceTree = "<group>"; };
 		60816CD31AF4BF8A00E709C9 /* IMHLocationPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHLocationPing.h; path = Models/IMHLocationPing.h; sourceTree = "<group>"; };
 		60816CD41AF4BF8A00E709C9 /* IMHLocationPing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHLocationPing.m; path = Models/IMHLocationPing.m; sourceTree = "<group>"; };
+		60816CD61AF4C97300E709C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		60816CD81AF4CB6B00E709C9 /* IMHLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHLocation.h; path = Models/IMHLocation.h; sourceTree = "<group>"; };
+		60816CD91AF4CB6B00E709C9 /* IMHLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHLocation.m; path = Models/IMHLocation.m; sourceTree = "<group>"; };
+		60816CDC1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JSONValueTransformer+IMHCustomDataTransformer.h"; path = "3rdParty/JSONValueTransformer+IMHCustomDataTransformer.h"; sourceTree = "<group>"; };
+		60816CDD1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JSONValueTransformer+IMHCustomDataTransformer.m"; path = "3rdParty/JSONValueTransformer+IMHCustomDataTransformer.m"; sourceTree = "<group>"; };
+		60816CDF1AF4D33C00E709C9 /* IMHUserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHUserDefaultsManager.h; path = Managers/IMHUserDefaultsManager.h; sourceTree = "<group>"; };
+		60816CE01AF4D33C00E709C9 /* IMHUserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHUserDefaultsManager.m; path = Managers/IMHUserDefaultsManager.m; sourceTree = "<group>"; };
+		60816CE21AF4E02100E709C9 /* IMHKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHKeyboardToolbar.h; path = Views/IMHKeyboardToolbar.h; sourceTree = "<group>"; };
+		60816CE31AF4E02100E709C9 /* IMHKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHKeyboardToolbar.m; path = Views/IMHKeyboardToolbar.m; sourceTree = "<group>"; };
+		60816CE51AF4E4D400E709C9 /* IMHTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHTextView.h; path = Views/IMHTextView.h; sourceTree = "<group>"; };
+		60816CE61AF4E4D400E709C9 /* IMHTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHTextView.m; path = Views/IMHTextView.m; sourceTree = "<group>"; };
 		B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.debug.xcconfig"; sourceTree = "<group>"; };
 		BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imhere.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60816CD71AF4C97300E709C9 /* CoreLocation.framework in Frameworks */,
 				CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +123,7 @@
 		455F6E84536306A48E039616 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60816CD61AF4C97300E709C9 /* CoreLocation.framework */,
 				BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */,
 			);
 			name = Frameworks;
@@ -133,6 +152,7 @@
 		60816C831AF4761B00E709C9 /* imhere */ = {
 			isa = PBXGroup;
 			children = (
+				60816CDB1AF4D0FF00E709C9 /* 3rdParty */,
 				60816CBF1AF499B200E709C9 /* Views */,
 				60816CAF1AF483A600E709C9 /* Models */,
 				60816CAE1AF47C5900E709C9 /* ViewControllers */,
@@ -179,6 +199,8 @@
 		60816CAA1AF4798700E709C9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				60816CDF1AF4D33C00E709C9 /* IMHUserDefaultsManager.h */,
+				60816CE01AF4D33C00E709C9 /* IMHUserDefaultsManager.m */,
 				60816CAB1AF47B4A00E709C9 /* IMHLocationManager.h */,
 				60816CAC1AF47B4A00E709C9 /* IMHLocationManager.m */,
 				60816CC01AF49BB700E709C9 /* IMHConnectionManager.h */,
@@ -217,6 +239,8 @@
 				60816CD11AF4BCFE00E709C9 /* IMHFeed.m */,
 				60816CD31AF4BF8A00E709C9 /* IMHLocationPing.h */,
 				60816CD41AF4BF8A00E709C9 /* IMHLocationPing.m */,
+				60816CD81AF4CB6B00E709C9 /* IMHLocation.h */,
+				60816CD91AF4CB6B00E709C9 /* IMHLocation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -224,8 +248,21 @@
 		60816CBF1AF499B200E709C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				60816CE51AF4E4D400E709C9 /* IMHTextView.h */,
+				60816CE61AF4E4D400E709C9 /* IMHTextView.m */,
+				60816CE21AF4E02100E709C9 /* IMHKeyboardToolbar.h */,
+				60816CE31AF4E02100E709C9 /* IMHKeyboardToolbar.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		60816CDB1AF4D0FF00E709C9 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				60816CDC1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.h */,
+				60816CDD1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.m */,
+			);
+			name = 3rdParty;
 			sourceTree = "<group>";
 		};
 		8EF102EC692A6E422D1D1301 /* Pods */ = {
@@ -378,20 +415,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				60816CBB1AF4992A00E709C9 /* IMHLocationPickerViewController.m in Sources */,
+				60816CE41AF4E02100E709C9 /* IMHKeyboardToolbar.m in Sources */,
 				60816CB21AF4849D00E709C9 /* IMHSendViewController.m in Sources */,
 				60816CD21AF4BCFE00E709C9 /* IMHFeed.m in Sources */,
 				60816C8D1AF4761B00E709C9 /* ViewController.m in Sources */,
 				60816CCC1AF4BC9900E709C9 /* IMHNote.m in Sources */,
+				60816CE71AF4E4D400E709C9 /* IMHTextView.m in Sources */,
 				60816CCF1AF4BCAA00E709C9 /* IMHReply.m in Sources */,
 				60816CD51AF4BF8A00E709C9 /* IMHLocationPing.m in Sources */,
 				60816CAD1AF47B4A00E709C9 /* IMHLocationManager.m in Sources */,
 				60816C8A1AF4761B00E709C9 /* AppDelegate.m in Sources */,
+				60816CDE1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.m in Sources */,
 				60816CB51AF498E600E709C9 /* IMHHomeViewController.m in Sources */,
+				60816CE11AF4D33C00E709C9 /* IMHUserDefaultsManager.m in Sources */,
 				60816CC21AF49BB700E709C9 /* IMHConnectionManager.m in Sources */,
 				60816C871AF4761B00E709C9 /* main.m in Sources */,
 				60816CC51AF49E0900E709C9 /* IMHSettingsViewController.m in Sources */,
 				60816CBE1AF499A100E709C9 /* IMHMessageViewController.m in Sources */,
 				60816CC91AF4B15800E709C9 /* IMHDatabaseManager.m in Sources */,
+				60816CDA1AF4CB6B00E709C9 /* IMHLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
