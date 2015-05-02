@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D815B861E02C84D9D22AFDE3"
+               BlueprintIdentifier = "5E07DF6D2CC023550B11825E"
                BuildableName = "libPods-imhere-YapDatabase.a"
                BlueprintName = "Pods-imhere-YapDatabase"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -12,6 +12,7 @@ pod 'SVProgressHUD'
 pod 'TPKeyboardAvoiding'
 pod 'YapDatabase'
 pod 'PNTToolbar'
+pod 'PubNub', '3.7.1'
 
 end
 

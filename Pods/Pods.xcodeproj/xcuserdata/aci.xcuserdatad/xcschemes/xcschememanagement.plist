@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-imhere-PubNub.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-imhere-SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0016E0A04B0EB311F45BC4EF</key>
+		<key>1F42746DF5AA155F21CE1D62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>00E27DD9D4A9D980B8FFB9BF</key>
+		<key>276609CFA3292E3F33FCAE70</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>08E4271C243FDAB85FA654DD</key>
+		<key>42859B88BE3FC48962739E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B8F39537D01A90852DB8F20</key>
+		<key>5E07DF6D2CC023550B11825E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43697DB865ED9E61A90E0A63</key>
+		<key>8BCD57FA464A68A4E8D611E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEF6C115B85789CD858370AC</key>
+		<key>ABD01F37C72D7A92C57577A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D09DB74CA54AEBBA12B4A9EB</key>
+		<key>C86D22681B31AAA79CBEAC21</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D815B861E02C84D9D22AFDE3</key>
+		<key>CF8448B305509A01D3B6BDB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F9CC62D6BEE45EDE676BCAA5</key>
+		<key>D67CADC69FD2B7E7BEEA0DFE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC7AF5D9702D88B1378C43F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
