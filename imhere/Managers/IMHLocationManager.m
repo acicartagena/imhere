@@ -100,6 +100,13 @@ static IMHLocationManager *_instance = nil;
     
 }
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse){
+        [self.locationManager startUpdatingLocation];
+    }
+}
+
 #pragma mark - public methods
 - (void)forwardGeocodeLocationWithName:(NSString *)locationName withCompletionBlock:(void (^)(NSArray *locations))completionBlock
 {
