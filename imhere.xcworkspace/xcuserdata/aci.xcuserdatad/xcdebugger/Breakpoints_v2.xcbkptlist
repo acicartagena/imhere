@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "-forwardGeocodeLocationWithName:withCompletionBlock:"
+            landmarkName = "-locationManager"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -323,7 +323,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "-fetchAll:completion:"
+            landmarkName = "-readReceipt:messageID:completion:"
             landmarkType = "5">
             <Locations>
                <Location

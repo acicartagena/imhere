@@ -10,7 +10,9 @@
 #import <AFNetworking/AFNetworking.h>
 
 #import "IMHConstants.h"
+//#import "IMHLocation.h"
 
+@class IMHLocation;
 @class IMHNote;
 
 @interface IMHConnectionManager : AFHTTPSessionManager

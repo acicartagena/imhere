@@ -131,14 +131,6 @@ static IMHConnectionManager *_instance = nil;
     return [self handlePost:pathName withParameters:parameters completion:completionBlock];
 }
 
-- (NSURLSessionDataTask *) fetchAll:(NSString *)uid completion:(void (^)(NSError *error))completionBlock
-{
-    NSString *pathName = @"fetchall/";
-    NSDictionary *parameters = @{@"uid": uid};
-    
-    return [self handlePost:pathName withParameters:parameters completion:completionBlock];
-}
-
 - (NSURLSessionDataTask *) readReceipt:(NSString *)uid messageID:(NSString *)messageID completion:(void (^)(NSError *error))completionBlock
 {
     NSString *pathName = @"imread/";
