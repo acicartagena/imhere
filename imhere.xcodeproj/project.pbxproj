@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00BC62B91AF5209400FEBF58 /* IMHPubNubManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BC62B81AF5209400FEBF58 /* IMHPubNubManager.m */; };
 		60816C871AF4761B00E709C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816C861AF4761B00E709C9 /* main.m */; };
 		60816C8A1AF4761B00E709C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816C891AF4761B00E709C9 /* AppDelegate.m */; };
 		60816C8D1AF4761B00E709C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816C8C1AF4761B00E709C9 /* ViewController.m */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00BC62B81AF5209400FEBF58 /* IMHPubNubManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHPubNubManager.m; path = Managers/IMHPubNubManager.m; sourceTree = "<group>"; };
 		46E42CD8D4875211B2117105 /* Pods-imhere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.release.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.release.xcconfig"; sourceTree = "<group>"; };
 		60816C811AF4761B00E709C9 /* imhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60816C851AF4761B00E709C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,7 +231,7 @@
 				60816CC71AF4B15800E709C9 /* IMHDatabaseManager.h */,
 				60816CC81AF4B15800E709C9 /* IMHDatabaseManager.m */,
 				60816CF51AF509B700E709C9 /* IMHPubNubManager.h */,
-				60816CF61AF509B700E709C9 /* IMHPubNubManager.m */,
+				00BC62B81AF5209400FEBF58 /* IMHPubNubManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -356,6 +358,7 @@
 				TargetAttributes = {
 					60816C801AF4761B00E709C9 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = VWW575E2Q5;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -456,7 +459,7 @@
 				60816CCC1AF4BC9900E709C9 /* IMHNote.m in Sources */,
 				60816CE71AF4E4D400E709C9 /* IMHTextView.m in Sources */,
 				60816CCF1AF4BCAA00E709C9 /* IMHReply.m in Sources */,
-				60816CF71AF509B700E709C9 /* IMHPubNubManager.m in Sources */,
+				00BC62B91AF5209400FEBF58 /* IMHPubNubManager.m in Sources */,
 				60816CD51AF4BF8A00E709C9 /* IMHLocationPing.m in Sources */,
 				60816CF11AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m in Sources */,
 				60816CAD1AF47B4A00E709C9 /* IMHLocationManager.m in Sources */,
@@ -592,6 +595,7 @@
 			baseConfigurationReference = B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = imhere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -604,6 +608,7 @@
 			baseConfigurationReference = 46E42CD8D4875211B2117105 /* Pods-imhere.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = imhere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -14,4 +14,6 @@
 
 + (IMHPubNubManager *)sharedManager;
 
+- (void) joinChannel:(NSString *) channelName completion:(void (^)(NSError *error))completionBlock;
+
 @end
