@@ -23,9 +23,20 @@ PODS:
   - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaLumberjack (1.9.2):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.9.2)
+  - CocoaLumberjack/Extensions (1.9.2):
+    - CocoaLumberjack/Core
   - JSONModel (1.0.2)
   - SVProgressHUD (1.1.3)
   - TPKeyboardAvoiding (1.2.6)
+  - YapDatabase (2.6.1):
+    - YapDatabase/standard
+  - YapDatabase/common (2.6.1):
+    - CocoaLumberjack (~> 1)
+  - YapDatabase/standard (2.6.1):
+    - YapDatabase/common
 
 DEPENDENCIES:
   - AFNetworkActivityLogger
@@ -33,12 +44,15 @@ DEPENDENCIES:
   - JSONModel
   - SVProgressHUD
   - TPKeyboardAvoiding
+  - YapDatabase
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   TPKeyboardAvoiding: ee4dd35e3bb7bb64bfbda47e7cc9ba872ff10f77
+  YapDatabase: 13566c87dc9226a0f15d755edba08e8ad94cac9f
 
 COCOAPODS: 0.34.4

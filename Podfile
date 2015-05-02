@@ -10,6 +10,7 @@ pod 'AFNetworking'
 pod 'JSONModel'
 pod 'SVProgressHUD'
 pod 'TPKeyboardAvoiding'
+pod 'YapDatabase'
 
 end
 

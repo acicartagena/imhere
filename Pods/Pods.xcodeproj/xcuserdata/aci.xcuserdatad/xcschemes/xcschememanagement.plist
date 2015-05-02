@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-imhere-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-imhere-JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-imhere-YapDatabase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-imhere.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E63C5281F4F62070163F32A</key>
+		<key>1E845E0837B0204702AA63DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1BC38746D8B79D2DDC9F8AD9</key>
+		<key>3A404A1B22254CFD14D5FE4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2583DCE2B50A4B9E15ABD27E</key>
+		<key>5F1FFC804734D34B923F7BB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F8D17CC01211B199C50D1D5</key>
+		<key>7294C96118F410670F578FFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C17957FED70A75F4C8035D03</key>
+		<key>B635A2791087D14833274878</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3B17AABA06AA228A96A14DD</key>
+		<key>E03DCFB68A4B593DF18694A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4DC804334FCB55136063E69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F748560D331321541330F31A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
