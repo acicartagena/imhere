@@ -13,5 +13,9 @@
 
 #define kBaseUrl @"http://52.64.90.100:8000/"
 
+#define imhGray [UIColor colorWithRed:90.0f/255.0f green:101.0f/255.0f blue:109.0f/255.0f alpha:1.0f];
+#define imhGreen [UIColor colorWithRed:58.0f/255.0f green:207.0f/255.0f blue:187.0f/255.0f alpha:1.0f];
+
+
 
 #endif

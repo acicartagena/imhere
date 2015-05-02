@@ -34,6 +34,8 @@
 		60816CE71AF4E4D400E709C9 /* IMHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CE61AF4E4D400E709C9 /* IMHTextView.m */; };
 		60816CEA1AF4EC0A00E709C9 /* IMHLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CE91AF4EC0A00E709C9 /* IMHLocationTableViewCell.m */; };
 		60816CEE1AF4F3A300E709C9 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60816CED1AF4F3A300E709C9 /* AddressBookUI.framework */; };
+		60816CF11AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CF01AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m */; };
+		60816CF41AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 60816CF31AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m */; };
 		CD9563E82AE1733B06706638 /* libPods-imhere.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,10 @@
 		60816CE91AF4EC0A00E709C9 /* IMHLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHLocationTableViewCell.m; path = Views/IMHLocationTableViewCell.m; sourceTree = "<group>"; };
 		60816CEB1AF4F35000E709C9 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		60816CED1AF4F3A300E709C9 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		60816CEF1AF501AC00E709C9 /* IMHNoteFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMHNoteFeedTableViewCell.h; path = Views/IMHNoteFeedTableViewCell.h; sourceTree = "<group>"; };
+		60816CF01AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMHNoteFeedTableViewCell.m; path = Views/IMHNoteFeedTableViewCell.m; sourceTree = "<group>"; };
+		60816CF21AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+DynamicCellHeight.h"; path = "3rdParty/UITableViewCell+DynamicCellHeight.h"; sourceTree = "<group>"; };
+		60816CF31AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+DynamicCellHeight.m"; path = "3rdParty/UITableViewCell+DynamicCellHeight.m"; sourceTree = "<group>"; };
 		B9CEA61E448E76B396DA06D9 /* Pods-imhere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imhere.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imhere/Pods-imhere.debug.xcconfig"; sourceTree = "<group>"; };
 		BA1BF377E1CE04DF1947B165 /* libPods-imhere.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imhere.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -263,6 +269,8 @@
 				60816CE31AF4E02100E709C9 /* IMHKeyboardToolbar.m */,
 				60816CE81AF4EC0A00E709C9 /* IMHLocationTableViewCell.h */,
 				60816CE91AF4EC0A00E709C9 /* IMHLocationTableViewCell.m */,
+				60816CEF1AF501AC00E709C9 /* IMHNoteFeedTableViewCell.h */,
+				60816CF01AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -272,6 +280,8 @@
 			children = (
 				60816CDC1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.h */,
 				60816CDD1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.m */,
+				60816CF21AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.h */,
+				60816CF31AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m */,
 			);
 			name = 3rdParty;
 			sourceTree = "<group>";
@@ -429,12 +439,14 @@
 				60816CEA1AF4EC0A00E709C9 /* IMHLocationTableViewCell.m in Sources */,
 				60816CE41AF4E02100E709C9 /* IMHKeyboardToolbar.m in Sources */,
 				60816CB21AF4849D00E709C9 /* IMHSendViewController.m in Sources */,
+				60816CF41AF503AA00E709C9 /* UITableViewCell+DynamicCellHeight.m in Sources */,
 				60816CD21AF4BCFE00E709C9 /* IMHFeed.m in Sources */,
 				60816C8D1AF4761B00E709C9 /* ViewController.m in Sources */,
 				60816CCC1AF4BC9900E709C9 /* IMHNote.m in Sources */,
 				60816CE71AF4E4D400E709C9 /* IMHTextView.m in Sources */,
 				60816CCF1AF4BCAA00E709C9 /* IMHReply.m in Sources */,
 				60816CD51AF4BF8A00E709C9 /* IMHLocationPing.m in Sources */,
+				60816CF11AF501AC00E709C9 /* IMHNoteFeedTableViewCell.m in Sources */,
 				60816CAD1AF47B4A00E709C9 /* IMHLocationManager.m in Sources */,
 				60816C8A1AF4761B00E709C9 /* AppDelegate.m in Sources */,
 				60816CDE1AF4D14E00E709C9 /* JSONValueTransformer+IMHCustomDataTransformer.m in Sources */,

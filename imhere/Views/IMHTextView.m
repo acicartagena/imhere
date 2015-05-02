@@ -44,7 +44,8 @@
 
 - (void)setup
 {
-    self.placeholderColor = [UIColor lightGrayColor];
+    self.placeholderColor = [UIColor colorWithRed:90.0f/255.0f green:101.0f/255.0f blue:109.0f/255.0f alpha:1.0f];;
+    self.textColor = [UIColor colorWithRed:90.0f/255.0f green:101.0f/255.0f blue:109.0f/255.0f alpha:1.0f];
     self.font = [UIFont systemFontOfSize:14.0];
     
     self.layer.cornerRadius = 5.0f;
@@ -78,7 +79,7 @@
         _placeholderLabel.numberOfLines = 0;
         _placeholderLabel.font = self.font;
         _placeholderLabel.backgroundColor = [UIColor clearColor];
-        _placeholderLabel.textColor = _placeholderColor;
+        _placeholderLabel.textColor = [UIColor colorWithRed:90.0f/255.0f green:101.0f/255.0f blue:109.0f/255.0f alpha:1.0f];
         _placeholderLabel.hidden = YES;
         
 //        CGRect frame = _placeholderLabel.frame;
@@ -160,7 +161,7 @@
     if ([self shouldRenderPlaceholder]) {
         CGRect frame = self.bounds;
         frame.origin.x += 5.0;
-        frame.size.height = 50.0f;
+        frame.size.height = 5.0f;
         _placeholderLabel.frame = frame;
         _placeholderLabel.textColor = _placeholderColor;
         _placeholderLabel.hidden = NO;

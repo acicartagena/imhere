@@ -15,5 +15,6 @@ static NSString *locationTableViewCellIdentifier = @"locationTableViewCell";
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end

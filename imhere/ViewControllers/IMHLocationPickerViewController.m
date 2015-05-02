@@ -33,10 +33,31 @@
 
 - (void)setupUI
 {
+    self.locationName.clipsToBounds = YES;
+    self.locationName.layer.cornerRadius = 5.0f;
     self.locationName.delegate = self;
+    
+    self.tableView.clipsToBounds = YES;
+    self.tableView.layer.cornerRadius = 5.0f;
+    
 }
 
 #pragma mark - table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    IMHLocation *location = [self.locationArray objectAtIndex:indexPath.row];
+    
+    if ([self.delegate respondsToSelector:@selector(locationSelected:)]){
+        [self.delegate performSelector:@selector(locationSelected:) withObject:location];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70.0f;
+}
 
 #pragma mark - table view data source
 
@@ -52,8 +73,10 @@
     IMHLocation *location = [self.locationArray objectAtIndex:indexPath.row];
     
     cell.nameLabel.text = location.locationName;
+    cell.addressLabel.text = location.address;
     return cell;
 }
+
 
 #pragma mark - uitextfield delegate
 
