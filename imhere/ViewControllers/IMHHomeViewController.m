@@ -15,6 +15,8 @@
 #import "IMHDatabaseManager.h"
 #import "IMHUserDefaultsManager.h"
 
+#import "UIScrollView+SVPullToRefresh.h"
+
 @interface IMHHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -39,11 +41,23 @@
 - (void)setupUI
 {
     [self.tableView registerClass:[IMHNoteFeedTableViewCell class] forCellReuseIdentifier:noteFeedTableViewCellIdentifier];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [weakSelf getData];
+    }];
 }
 
 - (void)getData
 {
     [[IMHConnectionManager sharedManager] fetchAll:[[IMHUserDefaultsManager sharedManager] userId] completion:^(NSError *error) {
+        
+        [self.tableView.pullToRefreshView stopAnimating];
+        
+        if (error){
+            [[[UIAlertView alloc] initWithTitle:@"Oops" message:@"Something went wrong. Try again later" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            return;
+        }
         
         self.notes = [[IMHUserDefaultsManager sharedManager].notes allValues];
         [self.tableView reloadData];
@@ -110,6 +124,12 @@
 - (IBAction)newMessage:(id)sender
 {
     [self performSegueWithIdentifier:homeToNewNoteSegueId sender:nil];
+}
+
+- (IBAction)deleteAll:(id)sender
+{
+    [[IMHUserDefaultsManager sharedManager].notes removeAllObjects];
+    self.notes = nil;
 }
 
 #pragma mark - navigation
