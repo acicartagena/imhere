@@ -40,6 +40,9 @@
     self.tableView.clipsToBounds = YES;
     self.tableView.layer.cornerRadius = 5.0f;
     
+    self.mapView.showsUserLocation = YES;
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
+    
 }
 
 #pragma mark - table view delegate

@@ -44,6 +44,7 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
+#warning todo actual channel // 61424448667
     [[IMHUserDefaultsManager sharedManager] setUserId:@"61450061292"];
     
     return YES;
@@ -56,7 +57,6 @@
     dToken = deviceToken;
     
     // I have remote notifs now, subscribe to this channel
-#warning todo actual channel
     __weak typeof(self) weakSelf = self;
     [[IMHPubNubManager sharedManager] joinChannel:[[IMHUserDefaultsManager sharedManager] userId] completion:^(NSError *error){
         [PubNub setDelegate:weakSelf];
