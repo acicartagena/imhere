@@ -130,6 +130,7 @@
 {
     [[IMHUserDefaultsManager sharedManager].notes removeAllObjects];
     self.notes = nil;
+    [self.tableView reloadData];
 }
 
 #pragma mark - navigation

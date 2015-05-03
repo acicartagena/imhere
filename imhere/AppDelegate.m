@@ -44,8 +44,8 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-#warning todo actual channel // 61424448667
-    [[IMHUserDefaultsManager sharedManager] setUserId:@"61450061292"];
+#warning todo actual channel // 61424448667 // 61450061292
+    [[IMHUserDefaultsManager sharedManager] setUserId:@"61424448667"];
     
     return YES;
 }

@@ -94,10 +94,13 @@ static IMHConnectionManager *_instance = nil;
     
     
     return [self POST:pathName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        IMHNote *note2 = note;
-        note2.identification = [[responseObject objectForKey:@"id"] integerValue];
-        
-        [[IMHUserDefaultsManager sharedManager].notes setObject:note2 forKey:@(note2.identification)];
+//        IMHNote *note2 = note;
+//        note2.identification = [[responseObject objectForKey:@"id"] integerValue];
+//        
+//        [[IMHUserDefaultsManager sharedManager].notes setObject:note2 forKey:@(note2.identification)];
+        if (completionBlock){
+            completionBlock(nil);
+        }
         
 //        [[IMHDatabaseManager sharedManager] saveNote:note2 completionBlock:^{
 //            if (completionBlock){
