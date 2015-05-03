@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "825723F79459C2EEB3A56BFC"
+               BlueprintIdentifier = "BBB150E86A444F9E238450FF"
                BuildableName = "libPods-imhere-AFNetworking.a"
                BlueprintName = "Pods-imhere-AFNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">

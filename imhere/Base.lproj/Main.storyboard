@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gnN-GI-otI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gnN-GI-otI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--New Note-->
@@ -272,6 +272,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="imhere" id="sty-U3-8ll">
+                        <barButtonItem key="leftBarButtonItem" title="Delete All" style="plain" id="BD4-Gf-jkI">
+                            <color key="tintColor" red="0.18431372549019609" green="0.74117647058823533" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteAll:" destination="qmK-Ze-SHU" id="age-Fc-RtL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="BOt-7K-nOp">
                             <color key="tintColor" red="0.22745098039215686" green="0.81176470588235294" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -410,9 +416,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="130" width="368" height="395"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="iI0-gK-uo8" id="jnY-gm-pKa"/>
                                     <outlet property="delegate" destination="iI0-gK-uo8" id="FX2-Qh-ZIi"/>
@@ -428,8 +431,7 @@
                                         <exclude reference="6jB-Lk-Vn8"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="533" width="373" height="259"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="6jB-Lk-Vn8"/>
                                     </mask>
@@ -456,16 +458,16 @@
                                 <exclude reference="Tno-fa-J3t"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="roc-UZ-iaJ"/>
                                 <exclude reference="Wna-L2-yYe"/>
                                 <exclude reference="ct8-rK-igN"/>
                                 <exclude reference="j1w-0o-Ixm"/>
-                                <exclude reference="Lnn-NQ-vxX"/>
-                                <exclude reference="bR7-kI-neq"/>
-                                <exclude reference="oM8-KY-aVz"/>
                                 <exclude reference="PF6-AZ-igK"/>
                                 <exclude reference="qeE-3a-XQj"/>
                                 <exclude reference="uBQ-Xs-IqN"/>
-                                <exclude reference="roc-UZ-iaJ"/>
+                                <exclude reference="Lnn-NQ-vxX"/>
+                                <exclude reference="bR7-kI-neq"/>
+                                <exclude reference="oM8-KY-aVz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -475,16 +477,16 @@
                                 <include reference="Tno-fa-J3t"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="roc-UZ-iaJ"/>
                                 <include reference="Wna-L2-yYe"/>
                                 <include reference="ct8-rK-igN"/>
                                 <include reference="j1w-0o-Ixm"/>
-                                <include reference="Lnn-NQ-vxX"/>
-                                <include reference="bR7-kI-neq"/>
-                                <include reference="oM8-KY-aVz"/>
                                 <include reference="PF6-AZ-igK"/>
                                 <include reference="qeE-3a-XQj"/>
                                 <include reference="uBQ-Xs-IqN"/>
-                                <include reference="roc-UZ-iaJ"/>
+                                <include reference="Lnn-NQ-vxX"/>
+                                <include reference="bR7-kI-neq"/>
+                                <include reference="oM8-KY-aVz"/>
                             </mask>
                         </variation>
                     </view>
